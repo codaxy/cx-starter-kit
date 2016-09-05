@@ -1,0 +1,111 @@
+
+$applayout-header-border: .4rem;
+
+.csb-applayout {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.cse-applayout-header {
+  background: white;
+  border-bottom: $applayout-header-border solid $base-border-color;
+  position: relative;
+}
+
+.cse-applayout-logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: -$applayout-header-border;
+  width: $layout-nav-width;
+  background-color: $base-blue-color;
+  background: linear-gradient(60deg,
+          $base-blue-color 0,
+          $base-blue-color 8%,
+          adjust_color($base-blue-color,$hue:-4%) 8%,
+          adjust_color($base-blue-color,$hue:-4%) 30%,
+          adjust_color($base-blue-color,$hue:-10%) 30%,
+          adjust_color($base-blue-color,$hue:-10%) 40%,
+          adjust_color($base-blue-color,$hue:-13%) 40%,
+          adjust_color($base-blue-color,$hue:-13%) 85%,
+          adjust_color($base-blue-color,$hue:-16%) 85%,
+          adjust_color($base-blue-color,$hue:-16%));
+  border-bottom: $applayout-header-border solid rgba(black, .1);
+  color: white;
+  &:focus {
+    outline: 1px solid rgba(white, 0.8);
+    outline-offset: -3px;
+  }
+  > span {
+    position: absolute;
+    top: 50%;
+    left: 1.5rem;
+    text-transform: uppercase;
+    line-height: 1.2rem;
+    margin-top: - .6rem;
+    > span {
+      font-size: 1rem;
+      display: inline-block;
+      border-right: 1px solid rgba(white, .5);
+      padding-right: .4rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+.cse-applayout-headercontent {
+  min-height: 1rem;
+  margin-left: $layout-nav-width;
+  display: flex;
+  flex-direction: row;
+  padding: .5rem;
+}
+
+.cse-applayout-customheader {
+  flex: 1;
+}
+
+.cse-applayout-content {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+
+
+  & > aside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: $layout-nav-width;
+    background: white;
+    border-right: 1px solid $base-border-color;
+    z-index: 10000;
+    transition: transform .3s;
+    .css-hide-menu & {
+      transform:translate3d(-100%,0,0);
+    }
+  }
+
+  & > main {
+    height: 100%;
+    overflow: auto;
+    &:not(.cxm-stretched) {
+      margin-left: $layout-nav-width;
+      .css-hide-menu & {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+
+
+.cse-applayout-contentheader {
+  padding: 1.5rem 2rem;
+  //background-color: #f9f9fb;
+  background-color: $base-back-color;
+  border-bottom: 1px solid darken($base-border-color,2);
+}

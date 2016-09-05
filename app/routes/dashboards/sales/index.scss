@@ -1,0 +1,22 @@
+$dashboard-spacing: .7rem;
+
+.csb-dashboard {
+  padding: #{$dashboard-spacing/2};
+  background-color: #eff1f7;
+
+  h3 {
+    margin: 0;
+    margin-top: 5px;
+    color: #24b5d6;
+  }
+}
+
+
+.cse-dashboard-panel {
+  background-color: white;
+  padding: 1rem 2rem;
+  margin: #{$dashboard-spacing/2};
+  min-height: calc(100% - #{$dashboard-spacing});
+  //border-radius: 1px;
+  box-shadow: darken($base-border-color,0) 0 3px, lighten($base-border-color,3) 0 0 0 1px;
+}

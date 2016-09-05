@@ -1,0 +1,91 @@
+@import "~cx-core/src/index";
+
+//base colors
+$base-blue-color: #35a8f7;
+$base-back-color: #f0f2f5;
+$base-border-color: darken(#eff1f7,6);
+
+//layout
+
+$layout-nav-width: 14rem;
+
+* {
+  box-sizing: border-box;
+}
+
+
+html {
+  height: 100%;
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Maven Pro', sans-serif;
+  font-size: .875rem; //14px
+  color: #475767;
+}
+
+//typography
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  color: #475767;
+}
+
+a {
+  color: darken($base-blue-color,10);
+}
+
+h1 {
+  font-size: 1.75rem; //28px
+  font-weight: 100;
+  line-height: 2rem; //32px
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: normal;
+}
+
+h4 {
+  font-size: .875rem;
+}
+
+#app {
+  height: 100%;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-05 {
+  flex: 0.5;
+}
+
+.flex-stretch {
+  align-items: stretch;
+}
+
+@import "components/index";
+@import "layouts/index";
+@import "routes/index";
+@import "util/index";

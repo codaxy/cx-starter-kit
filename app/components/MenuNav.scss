@@ -1,0 +1,25 @@
+.cxb-link.cxm-menunav
+{
+  display: block;
+  text-decoration: none;
+  color: #555;
+  padding: 10px 20px 10px 40px;
+
+  i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    margin-top: -10px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+  }
+}
+
+.cxb-submenu.cxm-menunav {
+  border-bottom: 2px solid transparent;
+  &.cxs-active {
+    border-bottom-color: #ff9642;
+  }
+}

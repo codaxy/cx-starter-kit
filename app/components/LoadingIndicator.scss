@@ -1,0 +1,33 @@
+.cxb-loading-indicator {
+   padding: 20px;
+   color: gray;
+   position: relative;
+
+   .cxe-loading-indicator-slider {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      height: 2px;
+
+      & > div {
+         background: rgba(0, 100, 255, 0.29);
+         width: 0;
+         height: 2px;
+      }
+   }
+
+   &.cxs-loading .cxe-loading-indicator-slider > div {
+      width: 100%;
+      transition: width 2s ease;
+   }
+
+   &.cxs-absolute {
+      padding: 0;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      height: 2px;
+   }
+}

@@ -1,0 +1,40 @@
+.cxb-link.cxm-tabnav
+{
+  display: inline-block;
+  text-decoration: none;
+  color: #555;
+  padding: 15px 30px 15px 35px;
+  margin-left: 10px;
+  position: relative;
+
+  i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    margin-top: -10px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+  }
+}
+
+.cse-tabnav-tabs {
+  padding-left: 20px;
+
+  .cxb-tab {
+    padding: 10px 20px;
+    border-width: 0 !important;
+
+    &.cxs-active {
+      background: #B2EBF2;
+      box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+
+.cse-tabnav-links {
+  //border-top: 1px solid lightgray;
+  background: #CFD8DC;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}

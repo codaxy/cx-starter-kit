@@ -1,0 +1,94 @@
+.csb-github {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+}
+
+.cse-github-list {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.cse-github-repo {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+
+  & > header {
+    border-bottom: 1px solid lightgray;
+    padding: 0 20px;
+    background: #fbffdb;
+
+    .cxb-tab {
+      position: relative;
+    }
+  }
+
+  & > section {
+    flex: 1;
+    overflow: auto;
+  }
+}
+
+.gh-section {
+  padding: 10px;
+}
+
+.filter {
+  padding: 10px;
+}
+
+.gh-repo {
+  padding: 10px;
+  clear: both;
+  display: table-row;
+
+  img {
+    width: 64px;
+    height: 64px;
+    display: table-cell;
+    padding-right: 15px;
+  }
+
+  .description {
+    display: table-cell;
+    vertical-align: top;
+
+    h4 {
+      margin: 5px 0;
+      padding: 0;
+    }
+  }
+}
+
+.gh-readme {
+  font-family: sans-serif;
+  padding: 20px;
+  font-size: smaller;
+  position: relative;
+
+  h1 {
+    border-bottom: 1px solid lightgray;
+    font-size: 30px;
+  }
+
+  h3 {
+    margin: 0;
+    padding: 0;
+  }
+
+  img {
+    max-width: 95%;
+  }
+
+  pre {
+    background: #e8e8e8;
+    padding: 10px;
+
+    code {
+
+    }
+  }
+}
+

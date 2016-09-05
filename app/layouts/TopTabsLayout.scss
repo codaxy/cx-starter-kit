@@ -1,0 +1,31 @@
+.csb-toptabslayout {
+  max-width: 1200px;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.cse-toptabslayout-header {
+
+  background: lightgoldenrodyellow;
+
+  h1 {
+    margin: 0;
+    padding: 20px;
+    font-size: 1.5em;
+    a {
+      color: black;
+      text-decoration: none;
+    }
+  }
+}
+
+.cse-toptabslayout-content {
+  flex: 1;
+  display: flex;
+  main {
+    margin-top: 5px;
+    flex: 1;
+  }
+}

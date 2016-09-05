@@ -1,0 +1,60 @@
+
+
+.cxb-list.cxm-sidenav {
+   margin-top: 2rem;
+   overflow: hidden;
+   background: lighten($base-back-color,1);
+
+   .cxe-list-item {
+      padding: 0;
+      position: relative;
+   }
+
+   &:focus {
+      outline: none;
+   }
+
+   a:focus {
+      outline: none;
+   }
+
+}
+
+.csb-sidenavtopic {
+   padding: .75rem .75rem .75rem 1.25rem;
+   display: block;
+   border-bottom: 1px solid $base-back-color;
+   text-transform: uppercase;
+   font-size: .75rem;
+   font-weight: bolder;
+   background: white;
+   transition: border-bottom-width .2s;
+   transition-timing-function: linear;
+   &.css-expanded {
+      border-bottom-width: 6px;
+      border-bottom-color: darken($base-border-color,1);
+      .cxb-list.cxs-focused & {
+         //border-bottom-color: $base-blue-color;
+      }
+   }
+
+}
+
+
+.cxb-link.cxm-sidenav {
+
+   display: block;
+   text-decoration: none;
+   color: #555;
+   padding: .75rem 1rem;
+
+   margin: .5rem;
+   .cxs-selected > & {
+      //background: red;
+   }
+
+   i {
+      display: inline-block;
+      margin-right: 3px;
+   }
+}

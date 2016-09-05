@@ -1,0 +1,59 @@
+.csb-contacts {
+  display: flex;
+  flex-direction: row;
+}
+
+.cse-contacts-toolbar {
+  padding: 5px;
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: row;
+}
+
+.cse-contacts-list {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid lightgray;
+
+  .cxb-textfield.cxm-search {
+    width: 100%;
+  }
+}
+
+.cse-contacts-details {
+  flex: 1;
+}
+
+.cxb-contact-form {
+  padding: 1em 2em;
+  max-width: 600px;
+
+  h5 {
+    margin-top: 2em;
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  hr {
+    margin: 2em 0;
+    border: none;
+    border-bottom: 1px solid lightgray;
+  }
+}
+
+.cxb-list.cxm-contacts {
+  flex: 1;
+  &:focus {
+    outline: none;
+  }
+}
+.cxb-contactcard {
+  padding: 10px;
+}
+
+.cxe-contactcard-email {
+  color: gray;
+  font-size: 12px;
+}
+

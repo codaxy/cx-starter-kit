@@ -1,0 +1,35 @@
+.csb-orderlist {
+  display: flex;
+  flex-direction: column;
+}
+
+.cxb-grid.cxm-orders {
+  border-width: 0 0 1px 0;
+  border-color: $base-border-color;
+
+  & > .cxe-grid-fixed-header .cxe-grid-col-header {
+    background-color: #eff4fb;
+  }
+
+  td.cxs-pad {
+    padding: 10px 20px;
+  }
+
+  th {
+    padding: 10px 20px;
+  }
+  .cxe-grid-col-header {
+    &.cxs-sortable {
+      border-width: 0 0 1px 0;
+      border-color: $base-border-color;
+      &:hover {
+        background-color: lighten(#e3e6ef,1);
+      }
+    }
+    &.cxs-sorted-asc,
+    &.cxs-sorted-desc {
+      background-color: #e5e8f1  !important;
+    }
+  }
+
+}

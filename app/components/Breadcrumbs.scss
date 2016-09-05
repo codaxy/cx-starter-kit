@@ -1,0 +1,48 @@
+
+
+.csb-breadcrumb {
+  list-style: none;
+  display: inline-block;
+  margin: .85rem .5rem;
+  padding: 0;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.cse-breadcrumb-item {
+  display: inline-block;
+  margin: 0 .25rem;
+  padding-right: 1rem;
+  position: relative;
+  color: #475767;
+  $thickness:1px;
+  $color: darken($base-border-color,20);
+  $size: 8px;
+
+  &:not(:last-child):before {
+    content: ' ';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    height: $size;
+    width: $size;
+    border-width: 0 $thickness $thickness 0;
+    border-style: solid;
+    border-color: darken($color,5);
+    transform: rotate(-45deg) translate3d(0,-50%,0);
+
+  }
+
+  &:last-child {
+    font-weight: bold;
+  }
+
+  > a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    &:hover {
+      color: darken($base-blue-color,5);
+    }
+  }
+}

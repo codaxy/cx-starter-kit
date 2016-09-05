@@ -1,0 +1,83 @@
+
+.csb-cssicon-menu {
+  //todo: refactor - only one pseudo element
+
+  $size: 48px;
+  $icon-size: 18px;
+  $thickness: 2px;
+  $color: darken($base-border-color, 12);
+
+  display: block;
+  position: relative;
+  width: $size;
+  height: $size;
+  &:after,
+  &:before {
+    background-color: $color;
+    transition:all .2s linear;
+    content: ' ';
+    display: block;
+    position: absolute;
+    height: $thickness;
+    left: ( $size - $icon-size ) / 2;
+    right: ( $size - $icon-size ) / 2;
+    top: ($size/2) - ceil($thickness/2) ;
+  }
+  &:before {
+    box-shadow:$color 0 (-$icon-size/2 + $thickness);
+  }
+  &:after {
+    box-shadow:$color 0 ($icon-size/2) - $thickness;
+  }
+
+  .css-hide-menu & {
+    &:before {
+      box-shadow:$color 0 (-$icon-size/2 + $thickness + 3px);
+    }
+    &:after {
+      box-shadow:$color 0 ($icon-size/2 - $thickness - 3px);
+    }
+  }
+}
+
+.csb-cssicon-arrowleft {
+  $size: 20px;
+  $icon-size: 8px;
+  $thickness: 1px;
+  $arrow-rotation: 45deg;
+  $color: darken($base-border-color, 25);
+  width: $size;
+  height: $size;
+  position: relative;
+  display: block;
+  transition:all .2s;
+  &:after,
+  &:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    background-color: $color;
+    left: 50%;
+    bottom: 50%;
+    height: $thickness;
+    width: $icon-size;
+    margin-top: - ceil($thickness/2);
+    margin-left: - ceil($icon-size/2);
+    transition:all .3s;
+    transform-origin: left;
+  }
+  &:before {
+    transform: rotate(nth($arrow-rotation,1));
+  }
+  &:after {
+    transform: rotate(- nth($arrow-rotation,1));
+  }
+
+  .css-expanded > & {
+    //&:before {
+    //  transform: rotate(- nth($arrow-rotation,1) + 270);
+    //}
+    transform: rotate(- 90deg);
+
+  }
+}
