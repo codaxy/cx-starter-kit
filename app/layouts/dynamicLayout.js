@@ -5,30 +5,32 @@ import {TopMenuLayout} from './TopMenuLayout';
 import {TopTabsLayout} from './TopTabsLayout';
 import {store} from 'app/store';
 
-var appLayout = Widget.create(AppLayout);
-var topMenuLayout = Widget.create(TopMenuLayout);
-var topTabsLayout = Widget.create(TopTabsLayout);
-
-store.init('layout', "layout1");
+var cache = {};
+store.init('layout', "layout2");
 
 export function applyOuterLayout(context, instance) {
     var {widget, store} = instance;
-    var selectedLayout = store.get('layout');
+    var layoutName = store.get('layout');
 
-    switch (selectedLayout) {
-        default:
-        case 'layout1':
-            widget.outerLayout = appLayout;
-            break;
+    if (!cache.layout || cache.layoutName != layoutName) {
+        cache.layoutName = layoutName;
+        switch (layoutName) {
+            default:
+            case 'layout1':
+                cache.layout = Widget.create(AppLayout);
+                break;
 
-        case 'layout2':
-            widget.outerLayout = topMenuLayout;
-            break;
+            case 'layout2':
+                cache.layout = Widget.create(TopMenuLayout);
+                break;
 
-        case 'layout3':
-            widget.outerLayout = topTabsLayout;
-            break;
+            case 'layout3':
+                cache.layout = Widget.create(TopTabsLayout);
+                break;
+        }
     }
+
+    widget.outerLayout = cache.layout;
 }
 
 export function selectLayout(x) {
