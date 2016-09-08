@@ -6,7 +6,7 @@ import {TopTabsLayout} from './TopTabsLayout';
 import {store} from 'app/store';
 
 var cache = {};
-store.init('layout', "layout2");
+store.init('layout', "layout1");
 
 export function applyOuterLayout(context, instance) {
     var {widget, store} = instance;
