@@ -16,6 +16,8 @@ import DashboardRoutes from './dashboards';
 import AdminRoutes from './admin';
 
 import Default from './default';
+import MetaRoutes from './meta';
+
 
 export default <cx>
     <Sandbox key:bind="url"
@@ -33,6 +35,7 @@ export default <cx>
             <AdminRoutes />
             <LayoutRoutes/>
             <DashboardRoutes />
+            <MetaRoutes />
             <PageNotFound />
         </PureContainer>
 
