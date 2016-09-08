@@ -23,18 +23,20 @@
   padding-left: 20px;
 
   .cxb-tab {
-    padding: 10px 20px;
+    padding: 12px 20px;
     border-width: 0 !important;
+    margin: 0;
 
     &.cxs-active {
-      background: #B2EBF2;
-      box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+      background: rgba(255, 255, 255, 0.5);
+      //box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
     }
   }
 }
 
 .cse-tabnav-links {
+  background: rgba(255, 255, 255, 0.5);
   //border-top: 1px solid lightgray;
-  background: #CFD8DC;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  //background: #CFD8DC;
+  //box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
 }

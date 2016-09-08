@@ -5,11 +5,57 @@
   display: flex;
   flex-direction: column;
 
+  .csb-user {
+    color: white;
+  }
+}
+
+.cse-topmenulayout-logo {
+  display: block;
+  color: white;
+  position: relative;
+  width: 150px;
+
+  &:focus {
+    outline: 1px solid rgba(white, 0.8);
+    outline-offset: -3px;
+  }
+  > span {
+    position: absolute;
+    top: 50%;
+    left: 1.5rem;
+    text-transform: uppercase;
+    line-height: 1.2rem;
+    margin-top: - .6rem;
+    > span {
+      font-size: 1rem;
+      display: inline-block;
+      border-right: 1px solid rgba(white, .5);
+      padding-right: .4rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+  }
 }
 
 .cse-topmenulayout-header {
 
-  background: lightgoldenrodyellow;
+  background-color: $base-blue-color;
+  background: linear-gradient(60deg,
+          $base-blue-color 0,
+          $base-blue-color 8%,
+          adjust_color($base-blue-color,$hue:-4%) 8%,
+          adjust_color($base-blue-color,$hue:-4%) 30%,
+          adjust_color($base-blue-color,$hue:-10%) 30%,
+          adjust_color($base-blue-color,$hue:-10%) 40%,
+          adjust_color($base-blue-color,$hue:-13%) 40%,
+          adjust_color($base-blue-color,$hue:-13%) 85%,
+          adjust_color($base-blue-color,$hue:-16%) 85%,
+          adjust_color($base-blue-color,$hue:-16%));
+
+  //border-bottom: $applayout-header-border solid rgba(black, .1);
+
+  position: relative;
 
   h1 {
     margin: 0;

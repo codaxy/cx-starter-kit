@@ -9,7 +9,7 @@ import {openSettingsWindow} from './SettingsWindow';
 export const UserInfo = <cx>
     <Menu horizontal>
         <Submenu>
-            <div preserveWhitespace>
+            <div preserveWhitespace class="csb-user">
                 <Glyph name="user" /> <Text bind="user.displayName" />
             </div>
 

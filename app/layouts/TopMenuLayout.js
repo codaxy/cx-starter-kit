@@ -7,10 +7,16 @@ import {UserInfo} from 'app/components/UserInfo';
 export const TopMenuLayout = <cx>
     <div class="csb-topmenulayout">
         <header class="cse-topmenulayout-header">
-            <h1><Link href="~/">Cx Starter</Link></h1>
-            <UserInfo />
+            <div class="flex-row">
+                <Link class="cse-topmenulayout-logo" href="~/"><span><span>Cx</span> Starter</span></Link>
+                <div class="flex1" />
+                <UserInfo />
+            </div>
             <MenuNav />
         </header>
+        <div>
+            <ContentPlaceholder name="header" />
+        </div>
         <div class="cse-topmenulayout-content">
             <ContentPlaceholder />
         </div>
