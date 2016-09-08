@@ -26,18 +26,17 @@ export default <cx>
         {/*always active routes*/}
         <SignRoutes />
 
-        <Route route="~/" url:bind="url" items={Default}/>
-
-        {/*<RedirectRoute url:bind="url" route="*any" redirect="~/sign-in" visible:expr="!{user}"/>*/}
-
         <PureContainer visible:expr="!!{user}" layout={FirstVisibleChildLayout} onExplore={applyOuterLayout}>
             {/*signed in routes*/}
+            <Route route="~/" url:bind="url" items={Default}/>
             <DemoRoutes />
             <AdminRoutes />
             <LayoutRoutes/>
             <DashboardRoutes />
             <PageNotFound />
         </PureContainer>
+
+        <Route route="~/" url:bind="url" items={Default} />
 
         <RedirectRoute route="~/(*splat)" url:bind="url" redirect:tpl="~/sign/in?returnUrl={url:urlencode}"/>
 

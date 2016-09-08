@@ -1,7 +1,6 @@
 import {HtmlElement} from 'cx/ui/HtmlElement';
 import {Controller} from 'cx/ui/Controller';
 import {Link} from 'cx/ui/nav/Link';
-import {applyOuterLayout} from 'app/layouts/dynamicLayout';
 import {MessageLayout} from 'app/layouts/MessageLayout';
 import {Md} from 'app/components/Md';
 
@@ -14,7 +13,7 @@ export default <cx>
         </p>
     </main>
 
-    <main visible:expr="!!{user}" onExplore={applyOuterLayout} style="padding: 30px">
+    <main visible:expr="!!{user}" style="padding: 30px">
 
         <div putInto="header">
             <ul class="csb-breadcrumb">

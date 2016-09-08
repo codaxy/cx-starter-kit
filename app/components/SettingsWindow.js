@@ -14,7 +14,7 @@ const SettingsWindow = <cx>
         </div>
         <div style="width:600px;height:400px;padding: 20px" layout={LabelsLeftLayout}>
             <TextField value:bind="user.displayName" label="Display Name" />
-            <Select value:bind="layout" label="Layout">
+            <Select value:bind="layout.id" label="Layout">
                 <Option value="layout1">Layout1</Option>
                 <Option value="layout2">Layout2</Option>
                 <Option value="layout3">Layout3</Option>

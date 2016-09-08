@@ -8,11 +8,7 @@ import {GlobalCacheIdentifier} from 'cx/util/GlobalCacheIdentifier';
 
 function toggleMenu(e, {store}) {
     store.toggle('layout.menu.hide');
-}
-
-function forceRedraw(e, {store}) {
-    GlobalCacheIdentifier.change();
-    store.notify();
+    GlobalCacheIdentifier.change(); //redraw contents
 }
 
 export const AppLayout = <cx>
@@ -29,7 +25,7 @@ export const AppLayout = <cx>
                 </div>
             </div>
         </header>
-        <div class="cse-applayout-content" onTransitionEnd={forceRedraw}>
+        <div class="cse-applayout-content">
             <aside class="cse-applayout-nav">
                 <SideNav />
             </aside>

@@ -6,11 +6,11 @@ import {TopTabsLayout} from './TopTabsLayout';
 import {store} from 'app/store';
 
 var cache = {};
-store.init('layout', "layout1");
+store.init('layout.id', "layout1");
 
 export function applyOuterLayout(context, instance) {
     var {widget, store} = instance;
-    var layoutName = store.get('layout');
+    var layoutName = store.get('layout.id');
 
     if (!cache.layout || cache.layoutName != layoutName) {
         cache.layoutName = layoutName;
@@ -34,5 +34,5 @@ export function applyOuterLayout(context, instance) {
 }
 
 export function selectLayout(x) {
-    store.set('layout', x);
+    store.set('layout.id', x);
 }
