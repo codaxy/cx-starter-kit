@@ -3,7 +3,7 @@ export default [{
     expanded: false,
     articles: [
         {title: 'Sales', url: '~/dashboards/sales'},
-        {title: 'Dashboard2', url: '~/dashboards/dashboard2'},
+        {title: 'Web Analytics', url: '~/dashboards/web-analytics'},
         {title: 'Dashboard3', url: '~/dashboards/dashboard3'},
     ]
 }, {

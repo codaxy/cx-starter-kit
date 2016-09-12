@@ -1,0 +1,24 @@
+.cse-weba-kpi {
+    padding: 20px;
+    max-width: 200px;
+
+    &:not(:first-child) {
+        border-left: 1px solid lightgray;
+    }
+}
+
+.cse-weba-kpi-value {
+    font-size: 35px;
+}
+
+.cse-weba-kpi-trend {
+    margin-top: 5px;
+    width: 100%;
+    height: 30px;
+}
+
+.cse-weba-trend {
+    width: 100%;
+    height: 350px;
+}
+
