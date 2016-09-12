@@ -2,6 +2,8 @@ import {Controller} from 'cx/ui/Controller';
 import {History} from 'cx/app/History';
 import {Url} from 'cx/app/Url';
 import {getPageViews} from './api';
+import {Grouper} from 'cx/data/Grouper';
+import {sorter} from 'cx/data/comparer';
 
 export default class extends Controller {
     init() {
@@ -14,11 +16,46 @@ export default class extends Controller {
             to: new Date(today.getFullYear(), today.getMonth(), 1)
         });
 
+        this.store.init('$page.selected', {
+            field: 'sessions'
+        });
+
+        this.store.init('$page.fields', [{
+            id: 'sessions',
+            text: 'Sessions',
+            format: 'n;0',
+            aggregateField: 'sessionId',
+            aggregate: 'distinct'
+        }, {
+            id: 'users',
+            text: 'Users',
+            format: 'n;0',
+            aggregateField: 'userId',
+            aggregate: 'distinct'
+        }, {
+            id: 'pageViews',
+            text: 'Page Views',
+            format: 'n;0',
+            aggregate: 'count'
+        }, {
+            id: 'pages',
+            text: 'pages',
+            format: 'n;2',
+            aggregate: 'avg'
+        }, {
+            id: 'bounceRate',
+            text: 'Bounce Rate',
+            format: 'p',
+            aggregate: 'avg'
+        }]);
+
+        this.addComputable('$page.field', ['$page.fields', '$page.selected.field'], (fields, id) => fields.find(a=>a.id == id));
+
         this.addComputable('$page.data', ['$page.date'], (date) => {
             return getPageViews(date.from, date.to);
         }, true);
 
-        this.addTrigger('$page.monthly', ['$page.data'], data => {
+        this.addTrigger('$page.monthly', ['$page.data', '$page.selected.field'], (data, field) => {
 
             var months = {};
 
@@ -78,7 +115,6 @@ export default class extends Controller {
             keys.sort();
 
 
-
             this.store.set('$page.monthly', keys.map(k=> {
                 var {month, date, sessions, users, pageViews, bounces, newVisitors} = months[k];
 
@@ -87,12 +123,14 @@ export default class extends Controller {
                 total.bounces += bounces;
                 total.newVisitors += newVisitors;
 
-                return {
+                var res = {
                     month, sessions, users, pageViews, bounces, newVisitors, date,
                     pageRate: pageViews / sessions,
                     bounceRate: bounces / pageViews,
                     newVisitorsRate: newVisitors / sessions
-                }
+                };
+                res.value = res[field];
+                return res;
             }));
 
             total.pageRate = total.pageViews / total.sessions;
@@ -100,6 +138,37 @@ export default class extends Controller {
             total.newVisitorsRate = total.newVisitors / total.sessions;
 
             this.store.set('$page.total', total);
+        });
+
+        this.store.init('$page.breakBy', 'country');
+
+        this.store.init('$page.breakOptions', [{
+            id: 'country',
+            text: 'Country'
+        }, {
+            id: 'city',
+            text: 'City'
+        }, {
+            id: 'browser',
+            text: 'Browser'
+        }]);
+
+        this.addComputable('$page.break', ['$page.breakOptions', '$page.breakBy'], (options, id) => options.find(a=>a.id == id));
+
+        this.addComputable('$page.details', ['$page.breakBy', '$page.data', '$page.field'], (breakField, data, field) => {
+            var grouper = new Grouper({name: {bind: breakField}}, {
+                value: {
+                    type: field.aggregate,
+                    value: {bind: field.aggregateField || field.id}
+                }
+            });
+            grouper.processAll(data);
+            var results = grouper.getResults().map(x=>({
+                name: x.key.name,
+                value: x.aggregates.value
+            }));
+            var sort = sorter([{value: {bind: 'value'}, direction: 'DESC'}]);
+            return sort(results).slice(0, 15);
         });
     }
 }

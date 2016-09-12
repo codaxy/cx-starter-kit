@@ -16,7 +16,7 @@ export default <cx>
                 y: {type: NumericAxis, vertical: true, snapToTicks: 1, min: 0}
             }}>
                 <Gridlines />
-                <LineGraph data:bind="$page.monthly" xField="date" yField="sessions"/>
+                <LineGraph data:bind="$page.monthly" xField="date" yField="value" area colorIndex={8}/>
             </Chart>
         </Svg>
     </div>
