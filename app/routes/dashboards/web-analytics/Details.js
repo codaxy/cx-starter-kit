@@ -11,11 +11,50 @@ export default <cx>
                 <Text bind="$record.text" />
             </List>
         </div>
-        <div>
+        <div class="flex1">
             <Grid records:bind="$page.details" columns={[
-                { field: 'name', header: { tpl: '$page.break.text' } },
-                { field: 'value', header: { tpl: '$page.field.text' } }
-            ]} />
+                { field: 'name', header: { text: { tpl: '{$page.break.text}' }, style: 'width: 200px' } },
+                { field: 'value', header: { text: { tpl: '{$page.field.text}', style: 'width: 100px' } }, align: 'right' }
+            ]}
+            selection={{
+                type: KeySelection,
+                bind: '$page.selected.detail',
+                keyField: 'name',
+                multiple: true
+            }} />
+        </div>
+        <div class="flex1">
+            <Grid records:bind="$page.details" columns={[
+                { field: 'name', header: { text: { tpl: '{$page.break.text}' }, style: 'width: 200px' } },
+                { field: 'value', header: { text: { tpl: '{$page.field.text}', style: 'width: 100px' } }, align: 'right' }
+            ]}
+                  selection={{
+                      type: KeySelection,
+                      bind: '$page.selected.detail',
+                      keyField: 'name'
+                  }} />
+        </div>
+        <div class="flex1">
+            <Grid records:bind="$page.details" columns={[
+                { field: 'name', header: { text: { tpl: '{$page.break.text}' }, style: 'width: 200px' } },
+                { field: 'value', header: { text: { tpl: '{$page.field.text}', style: 'width: 100px' } }, align: 'right' }
+            ]}
+                  selection={{
+                      type: KeySelection,
+                      bind: '$page.selected.detail',
+                      keyField: 'name'
+                  }} />
+        </div>
+        <div class="flex1">
+            <Grid records:bind="$page.details" columns={[
+                { field: 'name', header: { text: { tpl: '{$page.break.text}' }, style: 'width: 200px' } },
+                { field: 'value', header: { text: { tpl: '{$page.field.text}', style: 'width: 100px' } }, align: 'right' }
+            ]}
+                  selection={{
+                      type: KeySelection,
+                      bind: '$page.selected.detail',
+                      keyField: 'name'
+                  }} />
         </div>
     </div>
 </cx>
