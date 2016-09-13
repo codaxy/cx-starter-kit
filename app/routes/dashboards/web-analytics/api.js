@@ -21,14 +21,14 @@ export function getPageViews(fromDate, toDate) {
         var cities = Array.from({length: 100}, ()=>casual.city);
         var referals = Array.from({length: 50}, ()=>`www.${casual.word}.com`);
 
-        pageViews = Array.from({length: 20000}, (_, index) => ({
+        pageViews = Array.from({length: 10000}, (_, index) => ({
             userId: casual.integer(1, 2000),
             sessionId: casual.integer(1, 5000),
             pageId: casual.integer(1, 10000),
             country: casual.random_element(countries),
             city: casual.random_element(cities),
             browser: casual.operating_system + '/' + casual.browser,
-            referal: casual.random_element(referals),
+            referral: casual.random_element(referals),
             date: new Date(year, month - Math.round(Math.pow(Math.random(), 2) * 24), casual.integer(1, 31)),
             duration: casual.integer(5, 5 * 60),
             bounces: Math.random() > 0.5 ? 1 : 0,

@@ -19,6 +19,37 @@ export default class extends Controller {
             field: 'sessions'
         });
 
+        this.store.init('$page.slots', {
+            slot0: 'referral',
+            slot1: 'country',
+            slot2: 'city',
+            slot3: 'browser',
+        });
+
+        var oldSlots;
+        this.addTrigger('slot-change', ['$page.slots'], slots => {
+            if (oldSlots) {
+                var change;
+                for (var key in slots)
+                    if (slots[key] != oldSlots[key])
+                        change = key;
+                if (change) {
+                    for (var key in slots)
+                        if (change != key && slots[key] == slots[change]) {
+                            slots = {
+                                ...slots,
+                                [key]: oldSlots[change]
+                            };
+                            this.store.set('$page.slots', slots);
+                            this.store.delete(`$page.selected.${key}`);
+                            this.store.delete(`$page.selected.${change}`);
+                            break;
+                        }
+                }
+            }
+            oldSlots = slots;
+        }, true);
+
         this.store.init('$page.fields', [{
             id: 'sessions',
             text: 'Sessions',
@@ -135,12 +166,13 @@ export default class extends Controller {
             return result;
         });
 
-        this.addComputable('$page.details', ['$page.data', '$page.field', '$page.selected'], (data, field, selected) => {
+        this.addComputable('$page.details', ['$page.data', '$page.field', '$page.slots', '$page.selected'], (data, field, slots, selected) => {
             var details = {};
-            var categories = ['referal', 'country', 'city', 'browser'];
+            var categories = [slots.slot0, slots.slot1, slots.slot2, slots.slot3];
 
-            categories.forEach(cat=> {
-                details[cat] = sortBy(groupBy(data, {
+            categories.forEach((cat, index)=> {
+                var slotName = 'slot' + index;
+                var result = sortBy(groupBy(data, {
                     name: {bind: cat}
                 }, field.aggregates, x => {
                     var r = {
@@ -151,13 +183,14 @@ export default class extends Controller {
                         r[field.id] = field.value(x);
                     r.value = r[field.id];
                     return r;
-                })).slice(0, 15);
+                })).slice(0, 12);
 
                 //max value required for bars
-                details[cat].forEach(d=>d.max = details[cat][0].value);
+                result.forEach(d=>d.max = result[0].value);
+                details[slotName] = result;
 
-                if (Array.isArray(selected[cat]) && selected[cat].length > 0)
-                    data = data.filter(x=>selected[cat].indexOf(x[cat]) != -1);
+                if (Array.isArray(selected[slotName]) && selected[slotName].length > 0)
+                    data = data.filter(x=>selected[slotName].indexOf(x[cat]) != -1);
             });
             return details;
         });
