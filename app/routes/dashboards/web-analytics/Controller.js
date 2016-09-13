@@ -22,8 +22,8 @@ export default class extends Controller {
         this.store.init('$page.slots', {
             slot0: 'referral',
             slot1: 'country',
-            slot2: 'city',
-            slot3: 'browser',
+            slot2: 'browser',
+            slot3: 'city',
         });
 
         var oldSlots;

@@ -116,9 +116,17 @@ export default <cx>
             </div>
         </Tab>
 
-        <MonthField mode="range"
-                    from:bind="$page.date.from"
-                    to:bind="$page.date.to"
-                    required/>
+        <div class="flex2">
+            <div class="cse-weba-kpi">
+                <label>Period</label>
+                <div class="">
+                    <MonthField range
+                                from:bind="$page.date.from"
+                                to:bind="$page.date.to"
+                                required/>
+                </div>
+            </div>
+        </div>
+
     </div>
 </cx>

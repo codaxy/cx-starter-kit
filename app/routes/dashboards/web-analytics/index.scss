@@ -1,15 +1,6 @@
 .cse-weba-kpi {
     padding: 15px;
-    max-width: 200px;
     cursor: pointer;
-
-    &:not(:first-child) {
-        border-left: 1px solid lightgray;
-    }
-
-    &.css-selected {
-        background: yellow;
-    }
 }
 
 .cse-weba-kpi-value {
@@ -36,4 +27,23 @@
 .cse-weba-detailgrid {
     flex: 1;
     padding: 0 10px;
+}
+
+.csb-weba {
+
+    .cxb-tab.cxm-kpi {
+        flex: 1;
+    }
+
+    .cxb-datefield {
+        width: 100%;
+        height: 50px;
+        margin-top: 5px;
+    }
+
+    .cxe-datefield-input {
+        //border: none;
+        font-size: 20px;
+        padding: 20px 10px;
+    }
 }
