@@ -1,9 +1,8 @@
 import {Controller} from 'cx/ui/Controller';
 import {History} from 'cx/app/History';
 import {Url} from 'cx/app/Url';
-import {getPageViews} from './api';
-import {Grouper} from 'cx/data/Grouper';
-import {sorter} from 'cx/data/comparer';
+import {getPageViews, groupBy, sortBy} from './api';
+
 
 export default class extends Controller {
     init() {
@@ -24,29 +23,72 @@ export default class extends Controller {
             id: 'sessions',
             text: 'Sessions',
             format: 'n;0',
-            aggregateField: 'sessionId',
-            aggregate: 'distinct'
+            aggregates: {
+                sessions: {
+                    type: 'distinct',
+                    value: {bind: 'sessionId'}
+                }
+            },
         }, {
             id: 'users',
             text: 'Users',
             format: 'n;0',
-            aggregateField: 'userId',
-            aggregate: 'distinct'
+            aggregates: {
+                users: {
+                    type: 'distinct',
+                    value: {bind: 'userId'}
+                }
+            }
         }, {
             id: 'pageViews',
             text: 'Page Views',
             format: 'n;0',
-            aggregate: 'count'
+            aggregates: {
+                pageViews: {
+                    type: 'count',
+                    value: 1
+                }
+            }
         }, {
             id: 'pages',
-            text: 'pages',
+            text: 'Pages',
             format: 'n;2',
-            aggregate: 'avg'
+            aggregates: {
+                sessions: {
+                    type: 'distinct',
+                    value: {bind: 'sessionId'}
+                },
+                pageViews: {
+                    type: 'count',
+                    value: 1
+                }
+            },
+            value: x => x.aggregates.pageViews / x.aggregates.sessions
         }, {
             id: 'bounceRate',
             text: 'Bounce Rate',
             format: 'p',
-            aggregate: 'avg'
+            aggregates: {
+                bounces: {
+                    type: 'sum',
+                    value: {bind: 'bounces'}
+                },
+                pageViews: {
+                    type: 'count',
+                    value: 1
+                }
+            },
+            value: x => x.aggregates.bounces / x.aggregates.pageViews
+        }, {
+            id: 'duration',
+            text: 'Avg. Session Duration',
+            format: 'duration',
+            aggregates: {
+                duration: {
+                    type: 'avg',
+                    value: {bind: 'duration'}
+                }
+            }
         }]);
 
         this.addComputable('$page.field', ['$page.fields', '$page.selected.field'], (fields, id) => fields.find(a=>a.id == id));
@@ -55,120 +97,69 @@ export default class extends Controller {
             return getPageViews(date.from, date.to);
         }, true);
 
-        this.addTrigger('$page.monthly', ['$page.data', '$page.selected.field'], (data, field) => {
-
-            var months = {};
-
-            var total = {
-                sessions: 0,
-                pageViews: 0,
-                bounces: 0,
-                users: 0,
-                newVisitors: 0,
-                userIds: {}
-            };
-
-            for (var i = 0; i < data.length; i++) {
-                var x = data[i];
-                var monthKey = x.date.getFullYear() * 100 + x.date.getMonth();
-                var m = months[monthKey];
-                if (!m) {
-                    m = months[monthKey] = {
-                        date: new Date(x.date.getFullYear(), x.date.getMonth(), 1),
-                        month: monthKey,
-                        sessions: 0,
-                        users: 0,
-                        pageViews: 0,
-                        sessionIds: {},
-                        userIds: {},
-                        pages: {},
-                        bounces: 0,
-                        newVisitors: 0
-                    }
-                }
-
-                m.pageViews++;
-
-                if (!m.sessionIds[x.sessionId]) {
-                    m.sessions++;
-                    m.sessionIds[x.sessionId] = true;
-                }
-
-                if (!m.userIds[x.userId]) {
-                    m.users++;
-                    m.userIds[x.userId] = true;
-                }
-
-                if (!total.userIds[x.userId]) {
-                    total.users++;
-                    total.userIds[x.userId] = true;
-                }
-
-                if (x.bounce)
-                    m.bounces++;
-
-                if (x.newVisitor)
-                    m.newVisitors++;
-            }
-
-            var keys = Object.keys(months);
-            keys.sort();
-
-
-            this.store.set('$page.monthly', keys.map(k=> {
-                var {month, date, sessions, users, pageViews, bounces, newVisitors} = months[k];
-
-                total.sessions += sessions;
-                total.pageViews += pageViews;
-                total.bounces += bounces;
-                total.newVisitors += newVisitors;
-
-                var res = {
-                    month, sessions, users, pageViews, bounces, newVisitors, date,
-                    pageRate: pageViews / sessions,
-                    bounceRate: bounces / pageViews,
-                    newVisitorsRate: newVisitors / sessions
+        this.addComputable('$page.total', ['$page.data', '$page.fields'], (data, fields) => {
+            var aggregates = {};
+            fields.forEach(f=> Object.assign(aggregates, f.aggregates));
+            var result = groupBy(data, {}, aggregates, x => {
+                var r = {
+                    ...x.aggregates
                 };
-                res.value = res[field];
-                return res;
-            }));
-
-            total.pageRate = total.pageViews / total.sessions;
-            total.bounceRate = total.bounces / total.pageViews;
-            total.newVisitorsRate = total.newVisitors / total.sessions;
-
-            this.store.set('$page.total', total);
+                fields.forEach(f=> {
+                    if (f.value)
+                        r[f.id] = f.value(x)
+                });
+                return r;
+            });
+            return result[0];
         });
 
-        this.store.init('$page.breakBy', 'country');
-
-        this.store.init('$page.breakOptions', [{
-            id: 'country',
-            text: 'Country'
-        }, {
-            id: 'city',
-            text: 'City'
-        }, {
-            id: 'browser',
-            text: 'Browser'
-        }]);
-
-        this.addComputable('$page.break', ['$page.breakOptions', '$page.breakBy'], (options, id) => options.find(a=>a.id == id));
-
-        this.addComputable('$page.details', ['$page.breakBy', '$page.data', '$page.field'], (breakField, data, field) => {
-            var grouper = new Grouper({name: {bind: breakField}}, {
-                value: {
-                    type: field.aggregate,
-                    value: {bind: field.aggregateField || field.id}
-                }
+        this.addComputable('$page.monthly', ['$page.data', '$page.fields', '$page.selected.field'], (data, fields, field) => {
+            var aggregates = {};
+            fields.forEach(f=> Object.assign(aggregates, f.aggregates));
+            var result = groupBy(data, {
+                year: x => x.date.getFullYear(),
+                month: x => x.date.getMonth(),
+            }, aggregates, x => {
+                var r = {
+                    date: new Date(x.key.year, x.key.month, 1),
+                    month: Number(x.key.year) * 12 + Number(x.key.month),
+                    ...x.aggregates
+                };
+                fields.forEach(f=> {
+                    if (f.value)
+                        r[f.id] = f.value(x)
+                });
+                r.value = r[field];
+                return r;
             });
-            grouper.processAll(data);
-            var results = grouper.getResults().map(x=>({
-                name: x.key.name,
-                value: x.aggregates.value
-            }));
-            var sort = sorter([{value: {bind: 'value'}, direction: 'DESC'}]);
-            return sort(results).slice(0, 15);
+            return result;
+        });
+
+        this.addComputable('$page.details', ['$page.data', '$page.field', '$page.selected'], (data, field, selected) => {
+            var details = {};
+            var categories = ['referal', 'country', 'city', 'browser'];
+
+            categories.forEach(cat=> {
+                details[cat] = sortBy(groupBy(data, {
+                    name: {bind: cat}
+                }, field.aggregates, x => {
+                    var r = {
+                        name: x.key.name,
+                        ...x.aggregates
+                    };
+                    if (field.value)
+                        r[field.id] = field.value(x);
+                    r.value = r[field.id];
+                    return r;
+                })).slice(0, 15);
+
+                //max value required for bars
+                details[cat].forEach(d=>d.max = details[cat][0].value);
+
+                if (Array.isArray(selected[cat]) && selected[cat].length > 0)
+                    data = data.filter(x=>selected[cat].indexOf(x[cat]) != -1);
+            });
+            return details;
         });
     }
 }

@@ -69,31 +69,31 @@ export default <cx>
             <div class="cse-weba-kpi">
                 <label>Pages</label>
                 <div class="cse-weba-kpi-value">
-                    <Text tpl="{$page.total.pageRate:n;2}"/>
+                    <Text tpl="{$page.total.pages:n;2}"/>
                 </div>
                 <Svg class="cse-weba-kpi-trend">
                     <Chart axes={{
                         x: {type: NumericAxis, hidden: true, snapToTicks: 0},
                         y: {type: NumericAxis, vertical: true, hidden: true, snapToTicks: 0, min: 0}
                     }}>
-                        <LineGraph data:bind="$page.monthly" xField="month" yField="pageRate"/>
+                        <LineGraph data:bind="$page.monthly" xField="month" yField="pages"/>
                     </Chart>
                 </Svg>
             </div>
         </Tab>
 
-        <Tab value:bind="$page.selected.field" tab="avgSessionDuration" mod="kpi">
+        <Tab value:bind="$page.selected.field" tab="duration" mod="kpi">
             <div class="cse-weba-kpi">
                 <label>Avg. Session Duration</label>
                 <div class="cse-weba-kpi-value">
-                    <Text tpl="{$page.total.avgSessionDuration:n;1} min"/>
+                    <Text tpl="{$page.total.duration:duration}"/>
                 </div>
                 <Svg class="cse-weba-kpi-trend">
                     <Chart axes={{
                         x: {type: NumericAxis, hidden: true, snapToTicks: 0},
                         y: {type: NumericAxis, vertical: true, hidden: true, snapToTicks: 0, min: 0}
                     }}>
-                        <LineGraph data:bind="$page.monthly" xField="month" yField="sessions"/>
+                        <LineGraph data:bind="$page.monthly" xField="month" yField="duration"/>
                     </Chart>
                 </Svg>
             </div>

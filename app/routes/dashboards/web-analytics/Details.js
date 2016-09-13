@@ -6,55 +6,93 @@ import {KeySelection} from 'cx/ui/selection/KeySelection';
 
 export default <cx>
     <div class="flex-row">
-        <div>
-            <List records:bind="$page.breakOptions" selection={{type: KeySelection, bind: '$page.breakBy'}}>
-                <Text bind="$record.text" />
-            </List>
-        </div>
-        <div class="flex1">
-            <Grid records:bind="$page.details" columns={[
-                { field: 'name', header: { text: { tpl: '{$page.break.text}' }, style: 'width: 200px' } },
-                { field: 'value', header: { text: { tpl: '{$page.field.text}', style: 'width: 100px' } }, align: 'right' }
-            ]}
-            selection={{
-                type: KeySelection,
-                bind: '$page.selected.detail',
-                keyField: 'name',
-                multiple: true
-            }} />
-        </div>
-        <div class="flex1">
-            <Grid records:bind="$page.details" columns={[
-                { field: 'name', header: { text: { tpl: '{$page.break.text}' }, style: 'width: 200px' } },
-                { field: 'value', header: { text: { tpl: '{$page.field.text}', style: 'width: 100px' } }, align: 'right' }
+        <div class="cse-weba-detailgrid">
+            <Grid records:bind="$page.details.referal" columns={[
+                {field: 'name', header: {text: 'Referal', style: 'width: 200px'}},
+                {
+                    field: 'value',
+                    header: {text: {tpl: '{$page.field.text}'}, style: 'width: 100px'},
+                    align: 'right',
+                    format: {bind: '$page.field.format'}
+                },
+                {
+                    header: {style: 'width: 100px'}, items: <cx>
+                    <div class="cse-weba-bar" style={{width: {expr: "100*{$record.value}/{$record.max}+'%'"}}}/>
+                </cx>
+                }
             ]}
                   selection={{
                       type: KeySelection,
-                      bind: '$page.selected.detail',
-                      keyField: 'name'
-                  }} />
+                      bind: '$page.selected.referal',
+                      keyField: 'name',
+                      multiple: true
+                  }}/>
         </div>
-        <div class="flex1">
-            <Grid records:bind="$page.details" columns={[
-                { field: 'name', header: { text: { tpl: '{$page.break.text}' }, style: 'width: 200px' } },
-                { field: 'value', header: { text: { tpl: '{$page.field.text}', style: 'width: 100px' } }, align: 'right' }
+        <div class="cse-weba-detailgrid">
+            <Grid records:bind="$page.details.country" columns={[
+                {field: 'name', header: {text: 'Country', style: 'width: 200px'}},
+                {
+                    field: 'value',
+                    header: {text: {tpl: '{$page.field.text}'}, style: 'width: 100px'},
+                    align: 'right',
+                    format: {bind: '$page.field.format'}
+                },
+                {
+                    header: {style: 'width: 100px'}, items: <cx>
+                    <div class="cse-weba-bar" style={{width: {expr: "100*{$record.value}/{$record.max}+'%'"}}}/>
+                </cx>
+                }
             ]}
                   selection={{
                       type: KeySelection,
-                      bind: '$page.selected.detail',
-                      keyField: 'name'
-                  }} />
+                      bind: '$page.selected.country',
+                      keyField: 'name',
+                      multiple: true
+                  }}/>
         </div>
-        <div class="flex1">
-            <Grid records:bind="$page.details" columns={[
-                { field: 'name', header: { text: { tpl: '{$page.break.text}' }, style: 'width: 200px' } },
-                { field: 'value', header: { text: { tpl: '{$page.field.text}', style: 'width: 100px' } }, align: 'right' }
+        <div class="cse-weba-detailgrid">
+            <Grid records:bind="$page.details.city" columns={[
+                {field: 'name', header: {text: 'City', style: 'width: 200px'}},
+                {
+                    field: 'value',
+                    header: {text: {tpl: '{$page.field.text}'}, style: 'width: 100px'},
+                    align: 'right',
+                    format: {bind: '$page.field.format'}
+                },
+                {
+                    header: {style: 'width: 100px'}, items: <cx>
+                    <div class="cse-weba-bar" style={{width: {expr: "100*{$record.value}/{$record.max}+'%'"}}}/>
+                </cx>
+                }
             ]}
                   selection={{
                       type: KeySelection,
-                      bind: '$page.selected.detail',
-                      keyField: 'name'
-                  }} />
+                      bind: '$page.selected.city',
+                      keyField: 'name',
+                      multiple: true
+                  }}/>
+        </div>
+        <div class="cse-weba-detailgrid">
+            <Grid records:bind="$page.details.browser" columns={[
+                {field: 'name', header: {text: 'Browser', style: 'width: 200px'}},
+                {
+                    field: 'value',
+                    header: {text: {tpl: '{$page.field.text}'}, style: 'width: 100px'},
+                    align: 'right',
+                    format: {bind: '$page.field.format'}
+                },
+                {
+                    header: {style: 'width: 100px'}, items: <cx>
+                    <div class="cse-weba-bar" style={{width: {expr: "100*{$record.value}/{$record.max}+'%'"}}}/>
+                </cx>
+                }
+            ]}
+                  selection={{
+                      type: KeySelection,
+                      bind: '$page.selected.browser',
+                      keyField: 'name',
+                      multiple: true
+                  }}/>
         </div>
     </div>
 </cx>
