@@ -61,8 +61,8 @@ export default <cx>
                               <div>
                                   Date
                                   <br/>
-                                  <MonthField style="width:100%;margin-top:5px" from:bind="$page.filter.dateFrom"
-                                              to:bind="$page.filter.dateTo" mode="range"/>
+                                  <MonthField style="width:100%;margin-top:5px" range from:bind="$page.filter.dateFrom"
+                                              to:bind="$page.filter.dateTo" />
                               </div>
                           </cx>
                       }

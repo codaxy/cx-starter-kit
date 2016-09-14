@@ -1,0 +1,53 @@
+.cse-weba-kpi {
+    padding: 15px;
+    cursor: pointer;
+}
+
+.cse-weba-kpi-value {
+    font-size: 35px;
+}
+
+.cse-weba-kpi-trend {
+    margin-top: 5px;
+    width: 100%;
+    height: 30px;
+}
+
+.cse-weba-trend {
+    width: 100%;
+    height: 350px;
+    margin-top: 25px;
+}
+
+.cse-weba-bar {
+    background:#b5c7ca;
+    height: 10px;
+}
+
+.cse-weba-detailgrid {
+    flex: 1;
+    padding: 0 10px;
+}
+
+.csb-weba {
+
+    .cxb-tab.cxm-kpi {
+        flex: 1;
+    }
+
+    .cxb-datefield {
+        width: 100%;
+        height: 50px;
+        margin-top: 5px;
+    }
+
+    .cxe-datefield-input {
+        //border: none;
+        font-size: 20px;
+        padding: 20px 10px;
+    }
+
+    .cxe-select-select {
+        font-weight: bold;
+    }
+}

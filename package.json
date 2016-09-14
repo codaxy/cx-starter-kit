@@ -6,10 +6,14 @@
     "url": "git@github.com:codaxy/cx-starter-kit.git"
   },
   "keywords": [
-    "UI", "Web", "Widgets", "Charts", "React"
+    "UI",
+    "Web",
+    "Widgets",
+    "Charts",
+    "React"
   ],
   "author": "Igor Timarac",
-  "license": "SEE LICENSE IN LICENSE.txt",
+  "license": "SEE LICENSE IN LICENSE.md",
   "scripts": {
     "start": "webpack-dev-server --config config/webpack.dev.js --open",
     "build": "webpack --config config/webpack.prod.js"
@@ -17,7 +21,7 @@
   "dependencies": {
     "base-64": "^0.1.0",
     "casual": "^1.5.3",
-    "cx-core": "^16.9.3",
+    "cx-core": "^16.9.5",
     "cx-react": "^16.8.1",
     "deep-equal": "^1.0.1",
     "marked": "^0.3.6",

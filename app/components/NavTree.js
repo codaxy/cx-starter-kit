@@ -3,8 +3,7 @@ export default [{
     expanded: false,
     articles: [
         {title: 'Sales', url: '~/dashboards/sales'},
-        {title: 'Dashboard2', url: '~/dashboards/dashboard2'},
-        {title: 'Dashboard3', url: '~/dashboards/dashboard3'},
+        {title: 'Web Analytics', url: '~/dashboards/web-analytics'},
     ]
 }, {
     topic: 'Admin',
@@ -12,8 +11,6 @@ export default [{
     articles: [
         {title: 'Contacts', url: '~/admin/contacts'},
         {title: 'Orders', url: '~/admin/orders'},
-        {title: 'Page3', url: '~/admin/page3'},
-
     ]
 }, {
     topic: 'Demos',
