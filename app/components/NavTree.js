@@ -4,7 +4,6 @@ export default [{
     articles: [
         {title: 'Sales', url: '~/dashboards/sales'},
         {title: 'Web Analytics', url: '~/dashboards/web-analytics'},
-        {title: 'Dashboard3', url: '~/dashboards/dashboard3'},
     ]
 }, {
     topic: 'Admin',
@@ -12,8 +11,6 @@ export default [{
     articles: [
         {title: 'Contacts', url: '~/admin/contacts'},
         {title: 'Orders', url: '~/admin/orders'},
-        {title: 'Page3', url: '~/admin/page3'},
-
     ]
 }, {
     topic: 'Demos',

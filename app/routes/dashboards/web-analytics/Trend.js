@@ -13,7 +13,7 @@ import {Repeater} from 'cx/ui/Repeater';
 export default <cx>
     <div class="">
         <Svg class="cse-weba-trend">
-            <Chart margin="10 5 30 60" axes={{
+            <Chart margin="10 5 60 60" axes={{
                 x: { type: TimeAxis, snapToTicks: 0, minTickDistance: 80, minLabelDistance: 80 },
                 y: { type: NumericAxis, vertical: true, snapToTicks: 1, min: 0}
             }}>
