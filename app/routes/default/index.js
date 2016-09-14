@@ -52,6 +52,8 @@ export default <cx>
 
             The source code is available from [GitHub](https://github.com/codaxy/cx-starter-kit).
 
+            ### Credit
+
             This project wouldn't be possible without a number of other open-source products:
 
             * [React](https://facebook.github.io/react/)
@@ -59,6 +61,10 @@ export default <cx>
             * [webpack](https://webpack.github.io/)
             * [marked](https://github.com/chjj/marked)
             * [casual](https://github.com/boo1ean/casual)
+
+            Thanks to [Font Awesome](http://fontawesome.io/) for scalable vector icons.
+
+            The font used is MavenPro from [Google Fonts](https://fonts.google.com/specimen/Maven+Pro).
         </Md>
     </main>
 </cx>
