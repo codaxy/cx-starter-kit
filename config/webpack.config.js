@@ -41,7 +41,8 @@ module.exports = {
             name: "vendor"
         }),
         new HtmlWebpackPlugin({
-            template: paths.app + 'index.html'
+            template: paths.app + 'index.html',
+            hash: true
         })
     ]
 };
