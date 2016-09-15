@@ -18,12 +18,14 @@ import AdminRoutes from './admin';
 import Default from './default';
 import MetaRoutes from './meta';
 
+import {GAController} from '../util/ga';
 
 export default <cx>
     <Sandbox key:bind="url"
              storage:bind="pages"
              recordName="$page"
-             layout={FirstVisibleChildLayout}>
+             layout={FirstVisibleChildLayout}
+             controller={GAController}>
 
         {/*always active routes*/}
         <SignRoutes />

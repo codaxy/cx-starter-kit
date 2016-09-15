@@ -7,7 +7,9 @@ import {History} from 'cx/app/History';
 import {Timing} from 'cx/util/Timing'
 import {Debug} from 'cx/util/Debug'
 import {store} from './store';
-import {fetch} from 'whatwg-fetch';
+import 'whatwg-fetch';
+import {production} from 'cx/util/production';
+import {setupGoogleAnalytics} from './util/ga';
 
 import "./index.scss";
 
@@ -37,3 +39,5 @@ Debug.enable('app-data');
 
 stop = startAppLoop(document.getElementById('app'), store, Routes);
 
+if (production)
+  setupGoogleAnalytics();
