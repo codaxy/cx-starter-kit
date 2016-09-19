@@ -189,8 +189,15 @@ export default class extends Controller {
                 result.forEach(d=>d.max = result[0].value);
                 details[slotName] = result;
 
-                if (Array.isArray(selected[slotName]) && selected[slotName].length > 0)
+                if (Array.isArray(selected[slotName]) && selected[slotName].length > 0) {
                     data = data.filter(x=>selected[slotName].indexOf(x[cat]) != -1);
+
+                    //check if all selected values are actualy in the data
+                    var validSelections = selected[slotName].filter(x=>details[slotName].some(y=>y.name == x));
+                    if (validSelections.length != selected[slotName].length)
+                        this.store.set('$page.selected.' + slotName, validSelections);
+                }
+
             });
             return details;
         });
