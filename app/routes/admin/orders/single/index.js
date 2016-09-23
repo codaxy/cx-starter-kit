@@ -94,7 +94,7 @@ export default <cx>
                               { header: 'Tax', field: 'taxAmount', align: 'right', value:{ tpl: "{$record.taxAmount:currency} {$record.taxPct:ps:wrap;(;)}" } },
                               { header: 'Total', field: 'totalAmount', align: 'right', format: 'currency' },
                               { align: 'right', items: <cx>
-                                  <Button onClick="onRemoveItem">
+                                  <Button onClick="onRemoveItem" mod="hollow">
                                       <Glyph name="remove" />
                                   </Button>
                               </cx>}
@@ -115,4 +115,3 @@ export default <cx>
         </div>
     </main>
 </cx>;
-
