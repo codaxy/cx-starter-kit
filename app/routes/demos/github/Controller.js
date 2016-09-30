@@ -21,8 +21,11 @@ export default class extends Controller {
                 id: 'csharp',
                 text: 'C#'
             }, {
-                id: 'es6',
-                text: 'ES6'
+                id: 'php',
+                text: 'PHP'
+            }, {
+                id: 'java',
+                text: 'Java'
             }, {
                 id: 'go',
                 text: 'Go'

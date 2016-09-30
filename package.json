@@ -21,7 +21,7 @@
   "dependencies": {
     "base-64": "^0.1.0",
     "casual": "^1.5.3",
-    "cx-core": "^16.9.9",
+    "cx-core": "^16.9.12",
     "cx-react": "^16.8.1",
     "deep-equal": "^1.0.1",
     "marked": "^0.3.6",
