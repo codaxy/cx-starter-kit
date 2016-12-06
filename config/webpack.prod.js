@@ -12,15 +12,15 @@ var specific = {
     module: {
         loaders: [{
             test: /\.scss$/,
-            loaders: sass.extract(['css', 'sass'])
+            loaders: sass.extract(['css-loader', 'sass-loader'])
         }, {
             test: /\.css$/,
-            loaders: sass.extract(['css'])
+            loaders: sass.extract(['css-loader'])
         }]
     },
 
     plugins: [
-        new webpack.optimize.UglifyJsPlugin(),
+        //new webpack.optimize.UglifyJsPlugin(),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production')
         }),
