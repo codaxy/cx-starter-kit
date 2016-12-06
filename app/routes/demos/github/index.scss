@@ -40,15 +40,15 @@
 }
 
 .gh-repo {
-  padding: 10px;
+  padding: 0 10px 0 84px;
   clear: both;
-  display: table-row;
+  position: relative;
 
   img {
     width: 64px;
-    //height: 64px;
-    display: table-cell;
-    padding-right: 15px;
+    position: absolute;
+    left: 5px;
+    top: 10px;
   }
 
   .description {

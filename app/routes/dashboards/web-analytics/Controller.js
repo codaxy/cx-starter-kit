@@ -98,7 +98,7 @@ export default class extends Controller {
         }, {
             id: 'bounceRate',
             text: 'Bounce Rate',
-            format: 'p',
+            format: 'p;1',
             aggregates: {
                 bounces: {
                     type: 'sum',
