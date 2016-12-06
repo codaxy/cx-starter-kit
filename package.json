@@ -30,10 +30,7 @@
   "devDependencies": {
     "babel-core": "^6.8.0",
     "babel-loader": "^6.2.4",
-    "babel-plugin-transform-function-bind": "^6.8.0",
-    "babel-plugin-transform-object-rest-spread": "^6.19.0",
-    "babel-plugin-transform-react-jsx": "^6.8.0",
-    "babel-preset-cx-env": "^16.12.2",
+    "babel-preset-cx-env": "^16.12.4",
     "css-loader": "^0.26.1",
     "extract-text-webpack-plugin": "^2.0.0-beta.2",
     "file-loader": "^0.9.0",
