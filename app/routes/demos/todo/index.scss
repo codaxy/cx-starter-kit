@@ -41,8 +41,8 @@
     }
   }
 
-  & > button {
-    @include cxe-field-clear;
+  .cxb-button {
+    position: absolute;
     right: 0;
   }
 }

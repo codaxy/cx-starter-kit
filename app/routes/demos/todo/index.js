@@ -35,7 +35,7 @@ export default <cx>
                         <li class="csb-task">
                             <Checkbox class={{ "css-task-done": {bind: '$record.done'} }}
                                       text:tpl="{$record.text}" value:bind="$record.done"/>
-                            <button onClick="onRemove"/>
+                            <Button onClick="onRemove" mod="hollow" icon="clear"/>
                         </li>
                     </Repeater>
                 </ul>
