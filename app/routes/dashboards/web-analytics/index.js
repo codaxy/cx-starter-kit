@@ -1,16 +1,20 @@
-import {HtmlElement} from 'cx/ui/HtmlElement';
-import {Text} from 'cx/ui/Text';
-import {Link} from 'cx/ui/nav/Link';
-import {MonthField} from 'cx/ui/form/MonthField';
+import { HtmlElement, Text, Link, MonthField } from 'cx/widgets';
+import { Svg } from 'cx/svg';
+import { Chart, NumericAxis, LineGraph } from 'cx/charts';
+import { Format } from 'cx/util';
+
+
+
+
 import Controller from './Controller';
-import {Svg} from 'cx/ui/svg/Svg';
-import {Chart} from 'cx/ui/svg/charts/Chart';
-import {NumericAxis} from 'cx/ui/svg/charts/axis/NumericAxis';
-import {LineGraph} from 'cx/ui/svg/charts/LineGraph';
+
+
+
+
 import TopKpis from './TopKpis';
 import Trend from './Trend';
 import Details from './Details';
-import {Format} from 'cx/util/Format';
+
 
 Format.register('duration', (value) => {
     var hours = Math.floor(value / 3600);

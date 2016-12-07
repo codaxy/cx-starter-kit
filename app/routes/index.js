@@ -1,9 +1,11 @@
-import {Route} from 'cx/ui/nav/Route';
-import {RedirectRoute} from 'cx/ui/nav/RedirectRoute';
-import {PureContainer} from 'cx/ui/PureContainer';
-import {FirstVisibleChildLayout} from 'cx/ui/layout/FirstVisibleChildLayout';
-import {Sandbox} from 'cx/ui/Sandbox';
-import {HtmlElement} from 'cx/ui/HtmlElement';
+import { Route, RedirectRoute, PureContainer, Sandbox, HtmlElement } from 'cx/widgets';
+import { FirstVisibleChildLayout } from 'cx/ui';
+
+
+
+
+
+
 
 import {applyOuterLayout} from 'app/layouts/dynamicLayout';
 import {MessageLayout} from 'app/layouts/MessageLayout';

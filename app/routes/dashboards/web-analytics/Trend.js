@@ -1,14 +1,17 @@
-import {HtmlElement} from 'cx/ui/HtmlElement';
-import {Text} from 'cx/ui/Text';
-import {MonthField} from 'cx/ui/form/MonthField';
-import {Svg} from 'cx/ui/svg/Svg';
-import {Chart} from 'cx/ui/svg/charts/Chart';
-import {NumericAxis} from 'cx/ui/svg/charts/axis/NumericAxis';
-import {TimeAxis} from 'cx/ui/svg/charts/axis/TimeAxis';
-import {LineGraph} from 'cx/ui/svg/charts/LineGraph';
-import {Gridlines} from 'cx/ui/svg/charts/Gridlines';
-import {Marker} from 'cx/ui/svg/charts/Marker';
-import {Repeater} from 'cx/ui/Repeater';
+import { HtmlElement, Text, MonthField, Repeater } from 'cx/widgets';
+import { Svg } from 'cx/svg';
+import { Chart, NumericAxis, TimeAxis, LineGraph, Gridlines, Marker } from 'cx/charts';
+
+
+
+
+
+
+
+
+
+
+
 
 export default <cx>
     <div class="">

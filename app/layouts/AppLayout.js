@@ -1,10 +1,13 @@
-import {ContentPlaceholder} from 'cx/ui/layout/ContentPlaceholder';
-import {HtmlElement} from 'cx/ui/HtmlElement';
+import { ContentPlaceholder } from 'cx/ui';
+import { HtmlElement, Link } from 'cx/widgets';
+import { GlobalCacheIdentifier } from 'cx/util';
+
+
 import {SideNav} from 'app/components/SideNav';
-import {Link} from 'cx/ui/nav/Link';
+
 import {Glyph} from 'app/components/Glyph';
 import {UserInfo} from 'app/components/UserInfo';
-import {GlobalCacheIdentifier} from 'cx/util/GlobalCacheIdentifier';
+
 
 function toggleMenu(e, {store}) {
     store.toggle('layout.menu.hide');

@@ -1,9 +1,10 @@
-import {HtmlElement} from 'cx/ui/HtmlElement';
+import { HtmlElement, Menu, Link, Text, Submenu } from 'cx/widgets';
+
 import {Glyph} from 'app/components/Glyph';
-import {Menu} from 'cx/ui/nav/Menu';
-import {Link} from 'cx/ui/nav/Link';
-import {Text} from 'cx/ui/Text';
-import {Submenu} from 'cx/ui/nav/Submenu';
+
+
+
+
 import {openSettingsWindow} from './SettingsWindow';
 
 export const UserInfo = <cx>

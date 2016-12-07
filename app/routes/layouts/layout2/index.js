@@ -1,8 +1,10 @@
-import {HtmlElement} from 'cx/ui/HtmlElement';
-import {Controller} from 'cx/ui/Controller';
-import {Button} from 'cx/ui/Button';
-import {Text} from 'cx/ui/Text';
-import {Link} from 'cx/ui/nav/Link';
+import { HtmlElement, Button, Text, Link } from 'cx/widgets';
+import { Controller } from 'cx/ui';
+
+
+
+
+
 import {TopMenuLayout} from 'app/layouts/TopMenuLayout';
 import {Md} from 'app/components/Md';
 import {selectLayout} from 'app/layouts/dynamicLayout'

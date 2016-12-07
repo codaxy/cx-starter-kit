@@ -1,14 +1,9 @@
+import { Widget, startAppLoop, Url, History } from 'cx/ui';
+import { Timing, Debug, production } from 'cx/util';
 import './CSS';
 import Routes from './routes';
-import {Widget} from 'cx/ui/Widget';
-import {startAppLoop} from 'cx/app/startAppLoop';
-import {Url} from 'cx/app/Url';
-import {History} from 'cx/app/History';
-import {Timing} from 'cx/util/Timing'
-import {Debug} from 'cx/util/Debug'
 import {store} from './store';
 import 'whatwg-fetch';
-import {production} from 'cx/util/production';
 import {setupGoogleAnalytics} from './util/ga';
 
 import "./index.scss";

@@ -1,19 +1,12 @@
-import {HtmlElement} from 'cx/ui/HtmlElement';
-import {LookupField, TextField} from 'cx/ui/form';
-import {Tab} from 'cx/ui/nav';
-import {List} from 'cx/ui/List';
-import {Text} from 'cx/ui/Text';
-import {Link} from 'cx/ui/nav/Link';
+import { HtmlElement, List, Text, Link, PureContainer, LookupField, TextField, Tab } from 'cx/widgets';
+import { FirstVisibleChildLayout, KeySelection } from 'cx/ui';
+import { Format } from 'cx/util';
 
 import {LoadingIndicator} from 'app/components/LoadingIndicator';
 import {Error} from 'app/components/Error';
 import marked from 'marked';
-import {Format} from 'cx/util/Format';
-import {PureContainer} from 'cx/ui/PureContainer';
 
-import {FirstVisibleChildLayout} from 'cx/ui/layout/FirstVisibleChildLayout';
 
-import {KeySelection} from 'cx/ui/selection/KeySelection';
 
 import {applyOuterLayout} from 'app/layouts/dynamicLayout';
 

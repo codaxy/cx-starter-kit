@@ -1,6 +1,8 @@
-import {HtmlElement} from 'cx/ui/HtmlElement';
-import {Controller} from 'cx/ui/Controller';
-import {Link} from 'cx/ui/nav/Link';
+import { HtmlElement, Link } from 'cx/widgets';
+import { Controller } from 'cx/ui';
+
+
+
 import {MessageLayout} from 'app/layouts/MessageLayout';
 import {Md} from 'app/components/Md';
 

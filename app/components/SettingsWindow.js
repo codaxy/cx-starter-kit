@@ -1,11 +1,13 @@
-import {Widget} from 'cx/ui/Widget';
-import {Window} from 'cx/ui/overlay/Window';
-import {HtmlElement} from 'cx/ui/HtmlElement';
-import {Button} from 'cx/ui/Button';
-import {Tab} from 'cx/ui/nav/Tab';
-import {Select, Option} from 'cx/ui/form/Select';
-import {LabelsLeftLayout} from 'cx/ui/layout/LabelsLeftLayout';
-import {TextField} from 'cx/ui/form/TextField';
+import { Widget, LabelsLeftLayout } from 'cx/ui';
+import { Window, HtmlElement, Button, Tab, Select, Option, TextField } from 'cx/widgets';
+
+
+
+
+
+
+
+
 
 const SettingsWindow = <cx>
     <Window title="User Settings" modal center>

@@ -1,5 +1,4 @@
-import {CSS as CSSBase} from 'cx/ui/CSS';
-import {CSSHelper} from 'cx/ui/CSSHelper';
+import { CSS as CSSBase, CSSHelper } from 'cx/ui';
 
 export class CSS extends CSSBase {
 

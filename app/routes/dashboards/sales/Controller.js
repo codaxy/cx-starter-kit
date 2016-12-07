@@ -1,6 +1,7 @@
-import {Controller} from 'cx/ui/Controller';
-import {History} from 'cx/app/History';
-import {Url} from 'cx/app/Url';
+import { Controller, History, Url } from 'cx/ui';
+
+
+
 
 function sparkline() {
     var v = 50;

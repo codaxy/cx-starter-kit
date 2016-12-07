@@ -1,4 +1,4 @@
-import {Controller} from 'cx/ui/Controller';
+import { Controller } from 'cx/ui';
 import base64 from 'base-64';
 
 export default class extends Controller {

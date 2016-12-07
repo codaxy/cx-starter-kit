@@ -1,4 +1,5 @@
-import {HtmlElement} from 'cx/ui/HtmlElement';
+import { HtmlElement } from 'cx/widgets';
+
 
 import Controller from './Controller';
 import {MessageLayout} from 'app/layouts/MessageLayout';

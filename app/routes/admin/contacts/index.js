@@ -1,17 +1,8 @@
-import {HtmlElement} from 'cx/ui/HtmlElement';
-import {LabelsTopLayout} from 'cx/ui/layout/LabelsTopLayout';
-import {Repeater} from 'cx/ui/Repeater';
-import {TextField} from 'cx/ui/form/TextField';
-import {Checkbox} from 'cx/ui/form/Checkbox';
+import { HtmlElement, Repeater, TextField, Checkbox, Button, List, Link, Text, ValidationGroup } from 'cx/widgets';
+import { LabelsTopLayout, KeySelection } from 'cx/ui';
 import {Glyph} from 'app/components/Glyph';
-import {Button} from 'cx/ui/Button';
 import Controller from './Controller';
-import {List} from 'cx/ui/List';
-import {Link} from 'cx/ui/nav/Link';
-import {Text} from 'cx/ui/Text';
 import {applyOuterLayout} from 'app/layouts/dynamicLayout';
-import {KeySelection} from 'cx/ui/selection/KeySelection';
-import {ValidationGroup} from 'cx/ui/form/ValidationGroup';
 
 
 export default <cx>

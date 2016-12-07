@@ -1,5 +1,7 @@
-import {ContentPlaceholder} from 'cx/ui/layout/ContentPlaceholder';
-import {HtmlElement} from 'cx/ui/HtmlElement';
+import { ContentPlaceholder } from 'cx/ui';
+import { HtmlElement } from 'cx/widgets';
+
+
 
 export const MessageLayout = <cx>
     <div class="csb-msglayout">

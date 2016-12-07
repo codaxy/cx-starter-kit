@@ -1,9 +1,11 @@
-import {HtmlElement} from 'cx/ui/HtmlElement';
-import {List} from 'cx/ui/List';
-import {Grid} from 'cx/ui/grid/Grid';
-import {Text} from 'cx/ui/Text';
-import {KeySelection} from 'cx/ui/selection/KeySelection';
-import {Select} from 'cx/ui/form/Select';
+import { HtmlElement, List, Grid, Text, Select } from 'cx/widgets';
+import { KeySelection } from 'cx/ui';
+
+
+
+
+
+
 
 var options = <cx>
     <option value="referral">Referral</option>

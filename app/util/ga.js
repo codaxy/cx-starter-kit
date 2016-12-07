@@ -1,5 +1,4 @@
-import {Url} from 'cx/app/Url';
-import {Controller} from 'cx/ui/Controller';
+import { Url, Controller } from 'cx/ui';
 
 //NOTE: This file will be replaced by the build server
 

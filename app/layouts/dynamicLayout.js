@@ -1,5 +1,6 @@
+import { Widget } from 'cx/ui';
 
-import {Widget} from 'cx/ui/Widget';
+
 import {AppLayout} from './AppLayout';
 import {TopMenuLayout} from './TopMenuLayout';
 import {TopTabsLayout} from './TopTabsLayout';

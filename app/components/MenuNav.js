@@ -1,17 +1,9 @@
-import {HtmlElement} from 'cx/ui/HtmlElement';
-import {Repeater} from 'cx/ui/Repeater';
-import {Controller} from 'cx/ui/Controller';
-import {Text} from 'cx/ui/Text';
+import { HtmlElement, Repeater, Text, Link, Menu, Submenu, TreeAdapter } from 'cx/widgets';
+import { Controller, History, Url } from 'cx/ui';
+import { updateArray } from 'cx/data';
 
-import {Link} from 'cx/ui/nav/Link';
-import {Menu} from 'cx/ui/nav/Menu';
-import {Submenu} from 'cx/ui/nav/Submenu';
 
-import {TreeAdapter} from 'cx/ui/grid/TreeAdapter';
-import {History} from 'cx/app/History';
-import {Url} from 'cx/app/Url';
 import NavTree from './NavTree';
-import {updateArray} from 'cx/data/ops/updateArray';
 import {Glyph} from 'app/components/Glyph';
 
 class CController extends Controller {

@@ -1,4 +1,5 @@
-import {Route} from 'cx/ui/nav/Route';
+import { Route } from 'cx/widgets';
+
 import OpenSourceSoftware from './open-source-software';
 
 export default <cx>

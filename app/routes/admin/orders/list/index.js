@@ -1,22 +1,24 @@
-import {HtmlElement} from 'cx/ui/HtmlElement';
-import {LabelsTopLayout} from 'cx/ui/layout/LabelsTopLayout';
-import {Repeater} from 'cx/ui/Repeater';
-import {TextField} from 'cx/ui/form/TextField';
-import {NumberField} from 'cx/ui/form/NumberField';
-import {MonthField} from 'cx/ui/form/MonthField';
-import {Select} from 'cx/ui/form/Select';
-import {Checkbox} from 'cx/ui/form/Checkbox';
+import { HtmlElement, Repeater, TextField, NumberField, MonthField, Select, Checkbox, Button, Grid, Pagination, Link, List, Text, ValidationGroup } from 'cx/widgets';
+import { LabelsTopLayout, KeySelection } from 'cx/ui';
+
+
+
+
+
+
+
+
 import {Glyph} from 'app/components/Glyph';
-import {Button} from 'cx/ui/Button';
-import {Grid} from 'cx/ui/grid/Grid';
-import {Pagination} from 'cx/ui/grid/Pagination';
-import {Link} from 'cx/ui/nav/Link';
+
+
+
+
 import Controller from './Controller';
-import {List} from 'cx/ui/List';
-import {Text} from 'cx/ui/Text';
+
+
 import {applyOuterLayout} from 'app/layouts/dynamicLayout';
-import {KeySelection} from 'cx/ui/selection/KeySelection';
-import {ValidationGroup} from 'cx/ui/form/ValidationGroup';
+
+
 
 
 export default <cx>

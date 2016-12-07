@@ -1,5 +1,4 @@
-import {HtmlElement} from 'cx/ui/HtmlElement';
-import {Link} from 'cx/ui/nav/Link'
+import { HtmlElement, Link } from 'cx/widgets';
 
 export const PageNotFound = <cx>
   <main class="content-pad">

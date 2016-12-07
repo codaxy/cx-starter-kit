@@ -1,11 +1,14 @@
-import {HtmlElement} from 'cx/ui/HtmlElement';
-import {Text} from 'cx/ui/Text';
-import {MonthField} from 'cx/ui/form/MonthField';
-import {Svg} from 'cx/ui/svg/Svg';
-import {Chart} from 'cx/ui/svg/charts/Chart';
-import {NumericAxis} from 'cx/ui/svg/charts/axis/NumericAxis';
-import {LineGraph} from 'cx/ui/svg/charts/LineGraph';
-import {Tab} from 'cx/ui/nav/Tab';
+import { HtmlElement, Text, MonthField, Tab } from 'cx/widgets';
+import { Svg } from 'cx/svg';
+import { Chart, NumericAxis, LineGraph } from 'cx/charts';
+
+
+
+
+
+
+
+
 
 function selectKpi(e, {store, data}) {
     store.set('$page.selected.field', data.data.field);

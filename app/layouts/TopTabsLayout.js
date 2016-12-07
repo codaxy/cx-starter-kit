@@ -1,7 +1,9 @@
-import {ContentPlaceholder} from 'cx/ui/layout/ContentPlaceholder';
-import {HtmlElement} from 'cx/ui/HtmlElement';
+import { ContentPlaceholder } from 'cx/ui';
+import { HtmlElement, Link } from 'cx/widgets';
+
+
 import {TabNav} from 'app/components/TabNav';
-import {Link} from 'cx/ui/nav/Link';
+
 import {UserInfo} from 'app/components/UserInfo';
 
 export const TopTabsLayout = <cx>

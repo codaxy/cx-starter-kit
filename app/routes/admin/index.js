@@ -1,5 +1,6 @@
-import {HtmlElement} from 'cx/ui/HtmlElement';
-import {Route} from 'cx/ui/nav/Route';
+import { HtmlElement, Route } from 'cx/widgets';
+
+
 import Contacts from './contacts';
 import OrderRoutes from './orders';
 

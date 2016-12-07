@@ -1,7 +1,9 @@
+import { getComparer } from 'cx/data';
+import { dateDiff } from 'cx/util';
 import {Resource} from 'app/util/Resource';
 import casual from 'app/util/casual';
-import {getComparer} from 'cx/data/comparer';
-import {diff} from 'cx/util/date/diff';
+
+
 import {round2} from 'app/util/round2';
 
 var productData = Array.from({length: 200}, (_, index) => ({
@@ -117,12 +119,12 @@ orders.filter = (data, f) => {
 
     if (filter.dateFrom != null) {
         let from = new Date(filter.dateFrom);
-        result = result.filter(a=>diff(new Date(a.date), from) >= 0);
+        result = result.filter(a=>dateDiff(new Date(a.date), from) >= 0);
     }
 
     if (filter.dateTo != null) {
         let to = new Date(filter.dateTo);
-        result = result.filter(a=>diff(new Date(a.date), to) < 0);
+        result = result.filter(a=>dateDiff(new Date(a.date), to) < 0);
     }
 
     if (filter.sorters) {

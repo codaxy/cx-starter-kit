@@ -1,5 +1,6 @@
-import {Widget, VDOM} from 'cx/ui/Widget';
-import {CSS} from 'cx/ui/CSS';
+import { Widget, VDOM, CSS } from 'cx/ui';
+
+
 
 export class Glyph extends Widget
 {

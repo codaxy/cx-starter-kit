@@ -1,10 +1,12 @@
+import { getComparer, Grouper, sorter } from 'cx/data';
+import { dateDiff } from 'cx/util';
 import {Resource} from 'app/util/Resource';
 import casual from 'app/util/casual';
-import {getComparer} from 'cx/data/comparer';
-import {dateDiff} from 'cx/util/date/dateDiff';
+
+
 import {round2} from 'app/util/round2';
-import {Grouper} from 'cx/data/Grouper';
-import {sorter} from 'cx/data/comparer';
+
+
 
 var pageViews;
 
