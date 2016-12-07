@@ -12,7 +12,7 @@ const webpack = require('webpack'),
 module.exports = {
     resolve: {
         alias: {
-            cx: paths.root + 'node_modules/cx-core/src/',
+            //cx: paths.root + 'node_modules/cx-core/src/',
             app: paths.app
             //uncomment the line below to alias cx-react to cx-preact or some other React replacement library
             //'cx-react': 'cx-preact',
@@ -23,7 +23,7 @@ module.exports = {
         loaders: [{
             test: /\.js$/,
             //add here any ES6 based library
-            include: /(app|cx-core)/,
+            include: /(app)/,
             loader: 'babel-loader',
             query: babelCfg
         }]

@@ -13,7 +13,7 @@ module.exports = {
             modules: false,
             loose: true,
             cx: {
-                imports: false
+                imports: true
             }
         }]
     ],

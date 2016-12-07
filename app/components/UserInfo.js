@@ -10,9 +10,9 @@ import {openSettingsWindow} from './SettingsWindow';
 export const UserInfo = <cx>
     <Menu horizontal>
         <Submenu>
-            <div preserveWhitespace class="csb-user">
+            <a preserveWhitespace class="csb-user">
                 <Glyph name="user" /> <Text bind="user.displayName" />
-            </div>
+            </a>
 
             <Menu putInto="dropdown">
                 <a class="cxm-menu-pad" href="#" onClick={(e, {store}) => { openSettingsWindow(store); e.preventDefault(); }}>Settings</a>
