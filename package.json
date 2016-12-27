@@ -21,26 +21,26 @@
   "dependencies": {
     "base-64": "^0.1.0",
     "casual": "^1.5.3",
-    "cx-core": "^16.12.2",
+    "cx-core": "^16.12.12",
     "cx-react": "^16.8.1",
     "deep-equal": "^1.0.1",
     "marked": "^0.3.6",
     "whatwg-fetch": "^2.0.1"
   },
   "devDependencies": {
-    "babel-core": "^6.8.0",
-    "babel-loader": "^6.2.4",
-    "babel-preset-cx-env": "^16.12.4",
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-preset-cx-env": "^16.12.6",
     "css-loader": "^0.26.1",
     "extract-text-webpack-plugin": "^2.0.0-beta.2",
     "file-loader": "^0.9.0",
     "html-webpack-plugin": "^2.17.0",
     "json-loader": "^0.5.4",
-    "node-sass": "^3.7.0",
-    "sass-loader": "^4.0.2",
+    "node-sass": "^4.1.1",
+    "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",
     "webpack": "2.1.0-beta.26",
     "webpack-dev-server": "^2.0.0-beta",
-    "webpack-merge": "^1.0.2"
+    "webpack-merge": "^2.0.0"
   }
 }
