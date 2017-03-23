@@ -7,7 +7,8 @@ const webpack = require('webpack'),
         root: path.join(__dirname, '../'),
         app: path.join(__dirname, '../app/'),
         dist: path.join(__dirname, '../dist/')
-    };
+    },
+    gtm = require('./gtm.config.js');
 
 module.exports = {
     resolve: {
@@ -42,7 +43,9 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             template: paths.app + 'index.html',
-            hash: true
+            hash: true,
+            gtmh: gtm.head,
+            gtmb: gtm.body
         })
     ]
 };

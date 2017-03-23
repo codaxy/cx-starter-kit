@@ -1,12 +1,6 @@
 import { Route, RedirectRoute, PureContainer, Sandbox, HtmlElement } from 'cx/widgets';
 import { FirstVisibleChildLayout } from 'cx/ui';
 
-
-
-
-
-
-
 import {applyOuterLayout} from 'app/layouts/dynamicLayout';
 import {MessageLayout} from 'app/layouts/MessageLayout';
 import {PageNotFound} from './PageNotFound';
@@ -20,15 +14,12 @@ import AdminRoutes from './admin';
 import Default from './default';
 import MetaRoutes from './meta';
 
-import {GAController} from '../util/ga';
-
 export default <cx>
     <Sandbox key:bind="url"
              storage:bind="pages"
              recordName="$page"
              layout={FirstVisibleChildLayout}
-             controller={GAController}>
-
+    >
         {/*always active routes*/}
         <SignRoutes />
 

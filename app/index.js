@@ -1,10 +1,9 @@
 import { Widget, startAppLoop, Url, History } from 'cx/ui';
-import { Timing, Debug, production } from 'cx/util';
+import { Timing, Debug } from 'cx/util';
 import './CSS';
 import Routes from './routes';
 import {store} from './store';
 import 'whatwg-fetch';
-import {setupGoogleAnalytics} from './util/ga';
 
 import "./index.scss";
 
@@ -33,6 +32,3 @@ Timing.enable('app-loop');
 Debug.enable('app-data');
 
 stop = startAppLoop(document.getElementById('app'), store, Routes);
-
-if (production)
-  setupGoogleAnalytics();
