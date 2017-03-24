@@ -21,8 +21,8 @@
   "dependencies": {
     "base-64": "^0.1.0",
     "casual": "^1.5.11",
-    "cx-core": "^17.3.14",
-    "cx-react": "^16.12.0",
+    "cx": "^17.4.0",
+    "cx-react": "^17.4.0",
     "deep-equal": "^1.0.1",
     "marked": "^0.3.6",
     "whatwg-fetch": "^2.0.3"
