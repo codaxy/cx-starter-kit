@@ -17,7 +17,7 @@ function toggleMenu(e, {store}) {
 export const AppLayout = <cx>
     <div class={{"csb-applayout": true, 'css-hide-menu': { bind: 'layout.menu.hide' }}}>
         <header class="cse-applayout-header">
-            <Link  class="cse-applayout-logo" href="~/"><span><span>Cx</span> Starter</span></Link>
+            <a  class="cse-applayout-logo" href="https://cxjs.io/demos"><span><span>Cx</span> Starter</span></a>
             <div class="cse-applayout-headercontent">
                 <div class="cse-applayout-menu" onClick={toggleMenu}><i class="csb-cssicon-menu"></i></div>
                 <div class="cse-applayout-customheader">
