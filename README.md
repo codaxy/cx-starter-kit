@@ -1,6 +1,6 @@
 # Cx Starter Kit
 
-This is the boilerplate for new Cx projects.
+This is the boilerplate for new [CxJS](https://cxjs.io/) projects.
 
 ## Usage
 
@@ -12,8 +12,7 @@ in the root folder. You can start the demo app by:
 
 	npm start
 	
-By default, the development server runs on port 8088 in order to allow
-running Cx docs development server on the same machine simultaneously.
+By default, the development server runs on port 8088.
 
     npm run build
     
@@ -37,10 +36,5 @@ Create a production build.
     - production builds
     - code splitting
     - on demand code loading
-- example of integration with Redux
-    
-## Non-goals:
 
-- illustrate non-UI related patterns, e.g. social login
-- be a fully-fledged CSS framework
-- provide an example for any possible situation
+    
