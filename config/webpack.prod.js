@@ -1,12 +1,16 @@
 var webpack = require('webpack'),
     ExtractTextPlugin = require("extract-text-webpack-plugin"),
+    CopyWebpackPlugin = require('copy-webpack-plugin'),
     merge = require('webpack-merge'),
-    common = require('./webpack.config');
+    common = require('./webpack.config'),
+    path = require('path');
 
 var sass = new ExtractTextPlugin({
     filename: "app.css",
     allChunks: true
 });
+
+let root = process.env.npm_lifecycle_event.indexOf(':root') != -1;
 
 var specific = {
     module: {
@@ -24,11 +28,16 @@ var specific = {
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production')
         }),
-        sass
+        sass,
+        new CopyWebpackPlugin([{
+            from: path.resolve(__dirname, './netlify.redirects'),
+            to: '_redirects',
+            toType: 'file'
+        }]),
     ],
 
     output: {
-        publicPath: '/starter/'
+        publicPath: root ? '/' : '/starter/'
     }
 };
 
