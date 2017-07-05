@@ -8,7 +8,7 @@ const webpack = require('webpack'),
         app: path.join(__dirname, '../app/'),
         dist: path.join(__dirname, '../dist/')
     },
-    gtm = require('./gtm.config.js');
+    gtm = require('./gtm');
 
 module.exports = {
     resolve: {
