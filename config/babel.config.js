@@ -13,7 +13,9 @@ module.exports = {
             modules: false,
             loose: true,
             cx: {
-                imports: true
+                imports: {
+                    useSrc: true
+                }
             }
         }]
     ],

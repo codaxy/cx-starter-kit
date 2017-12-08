@@ -1,7 +1,5 @@
 import { HtmlElement, Repeater, TextField, Checkbox, Button, Link } from 'cx/widgets';
-import { LabelTopLayout } from 'cx/ui';
 import Controller from './Controller';
-import {applyOuterLayout} from 'app/layouts/dynamicLayout';
 
 export default <cx>
     <main>

@@ -1,21 +1,12 @@
-import { HtmlElement, Repeater, TextField, Checkbox, Button, Link } from 'cx/widgets';
-import { LabelTopLayout } from 'cx/ui';
-import { Svg, Rectangle, Line, Text } from 'cx/svg';
-import { Chart, NumericAxis, CategoryAxis, Bar, Legend, LineGraph, MarkerLine, Marker, Range } from 'cx/charts';
-import { computable } from 'cx/data';
-import { Format } from 'cx/util';
-import Controller from './Controller';
-import {applyOuterLayout} from 'app/layouts/dynamicLayout';
+import { HtmlElement, Link } from 'cx/widgets';
 
+import Controller from './Controller';
 import {KeyMetrics} from './KeyMetrics';
 import {TopCustomers} from './TopCustomers';
 import {RevenueQTD} from './RevenueQTD';
 import {RevenueYTD} from './RevenueYTD';
 import {ProductSalesYTD} from './ProductSalesYTD';
 import {MarketShare} from './MarketShare';
-
-
-
 
 export default <cx>
     <main controller={Controller}>

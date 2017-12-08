@@ -1,15 +1,10 @@
 import { Widget, VDOM, CSS } from 'cx/ui';
 
-
-
 export class Glyph extends Widget
 {
     declareData() {
         super.declareData(...arguments, {
-            name: undefined,
-            class: {structured: true},
-            className: {structured: true},
-            style: {structured: true}
+            name: undefined
         });
     }
 
@@ -21,3 +16,5 @@ export class Glyph extends Widget
                   aria-hidden="true"/>;
     }
 }
+
+Glyph.prototype.styled = true;

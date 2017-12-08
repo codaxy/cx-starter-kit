@@ -1,11 +1,8 @@
-import { HtmlElement, Repeater, TextField, Checkbox, Button } from 'cx/widgets';
-import { LabelTopLayout } from 'cx/ui';
+import { HtmlElement, Repeater } from 'cx/widgets';
 import { Svg, Rectangle, Line, Text } from 'cx/svg';
-import { Chart, NumericAxis, CategoryAxis, Bar, Legend, LineGraph, MarkerLine, Marker, Range } from 'cx/charts';
+import { Chart, NumericAxis, CategoryAxis, Bar, Legend, LineGraph, Marker, Range } from 'cx/charts';
 import { computable } from 'cx/data';
 import { Format } from 'cx/util';
-import {applyOuterLayout} from 'app/layouts/dynamicLayout';
-
 
 export const ProductSalesYTD = <cx>
     <Legend.Scope>
