@@ -34,6 +34,7 @@
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-cx-env": "^17.6.2",
+    "babel-preset-env": "^1.7.0",
     "copy-webpack-plugin": "^4.2.3",
     "css-loader": "^0.28.7",
     "extract-text-webpack-plugin": "^3.0.2",
