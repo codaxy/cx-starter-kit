@@ -73,11 +73,11 @@ export default <cx>
                               { header: 'Discount', field: 'discountPct', align: 'right', items: <cx>
                                   <NumberField value:bind="$record.discountPct" style="width:70px;" inputStyle="text-align: right" format="ps" maxValue={100} />
                               </cx> },
-                              { header: 'Unit Price', field: 'unitPrice', align: 'right', format: 'currency' },
-                              { header: 'Regular', field: 'regularAmount', align: 'right', format: 'currency' },
-                              { header: 'Discount', field: 'discountAmount', align: 'right', format: 'currency' },
+                              { header: 'Unit Price', field: 'unitPrice', align: 'right', format: 'currency;;2' },
+                              { header: 'Regular', field: 'regularAmount', align: 'right', format: 'currency;;2' },
+                              { header: 'Discount', field: 'discountAmount', align: 'right', format: 'currency;;2' },
                               { header: 'Tax', field: 'taxAmount', align: 'right', value:{ tpl: "{$record.taxAmount:currency} {$record.taxPct:ps:wrap;(;)}" } },
-                              { header: 'Total', field: 'totalAmount', align: 'right', format: 'currency' },
+                              { header: 'Total', field: 'totalAmount', align: 'right', format: 'currency;;2' },
                               { align: 'right', items: <cx>
                                   <Button onClick="onRemoveItem" mod="hollow">
                                       <Glyph name="remove" />
@@ -90,10 +90,10 @@ export default <cx>
                 <hr />
                 <div class="pad2 flex-row">
                     <div layout={LabelsLeftLayout} style="margin-left: auto">
-                        <NumberField value:bind="$page.order.regularAmount" label="Regular Price" readOnly inputStyle="text-align: right" format="currency"/>
-                        <NumberField value:bind="$page.order.taxAmount" label="Discount" readOnly inputStyle="text-align: right" format="currency"/>
-                        <NumberField value:bind="$page.order.discountAmount" label="Tax" readOnly inputStyle="text-align: right" format="currency"/>
-                        <NumberField value:bind="$page.order.totalAmount" label="Total" readOnly inputStyle="text-align: right; font-weight: bold" format="currency"/>
+                        <NumberField value:bind="$page.order.regularAmount" label="Regular Price" readOnly inputStyle="text-align: right" format="currency;;2"/>
+                        <NumberField value:bind="$page.order.taxAmount" label="Discount" readOnly inputStyle="text-align: right" format="currency;;2"/>
+                        <NumberField value:bind="$page.order.discountAmount" label="Tax" readOnly inputStyle="text-align: right" format="currency;;2"/>
+                        <NumberField value:bind="$page.order.totalAmount" label="Total" readOnly inputStyle="text-align: right; font-weight: bold" format="currency;;2"/>
                     </div>
                 </div>
             </ValidationGroup>
