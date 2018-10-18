@@ -22,12 +22,12 @@
   "dependencies": {
     "base-64": "^0.1.0",
     "casual": "^1.5.17",
-    "cx": "^18.1.1",
+    "cx": "^18.10.7",
     "cx-react": "^17.10.0",
     "deep-equal": "^1.0.1",
     "marked": "^0.3.7",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {

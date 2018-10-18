@@ -1586,11 +1586,11 @@ cx-react@^17.10.0:
   version "17.10.0"
   resolved "https://registry.yarnpkg.com/cx-react/-/cx-react-17.10.0.tgz#9ef22248f0f37aeae4450a7318c3a083d59fda8b"
 
-cx@^18.1.1:
-  version "18.1.2"
-  resolved "https://registry.yarnpkg.com/cx/-/cx-18.1.2.tgz#26c2f2f9740f3f7984a1b36b6c94ed1ddf29aca0"
+cx@^18.10.7:
+  version "18.10.7"
+  resolved "https://registry.yarnpkg.com/cx/-/cx-18.10.7.tgz#12e8ecbaa7f79f15610461d75c50e71c5faed25d"
   dependencies:
-    intl-io "^0.2.8"
+    intl-io "^0.2.11"
     route-parser "^0.0.5"
 
 d@1:
@@ -2637,9 +2637,9 @@ interpret@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.0.1.tgz#d579fb7f693b858004947af39fa0db49f795602c"
 
-intl-io@^0.2.8:
-  version "0.2.8"
-  resolved "https://registry.yarnpkg.com/intl-io/-/intl-io-0.2.8.tgz#d088eb9060c1a79c9b66e1215c4c1faa3484cc18"
+intl-io@^0.2.11:
+  version "0.2.11"
+  resolved "https://registry.yarnpkg.com/intl-io/-/intl-io-0.2.11.tgz#2afeb409fcebc30d2c588b465f141679935e31f8"
 
 invariant@^2.2.0, invariant@^2.2.2:
   version "2.2.2"

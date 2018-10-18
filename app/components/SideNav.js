@@ -35,9 +35,11 @@ export const SideNav = <cx>
           records:bind="contents"
           recordName="$topic"
           adapter={{type: TreeAdapter, childrenField: 'articles', expandedField: 'expanded'}}
-          selection={{type: KeySelection, bind: 'url', keyField: 'url'}}
-          onItemClick={onItemClick}>
-
+          onItemClick={onItemClick}
+          itemClassName={{
+              "cxs-selected": { expr: '{url}=={$topic.url}' }
+          }}
+    >
         <div visible:expr="{$topic.$level} == 0" preserveWhitespace
              class={{
                  "csb-sidenavtopic": true,
