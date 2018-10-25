@@ -32,7 +32,11 @@ var specific = {
             to: '_redirects',
             toType: 'file'
         }]),
-    ]
+    ],
+
+    output: {
+        publicPath: '/'
+    }
 };
 
 module.exports = merge(common, specific);
