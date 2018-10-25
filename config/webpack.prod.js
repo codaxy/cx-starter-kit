@@ -10,8 +10,6 @@ var sass = new ExtractTextPlugin({
     allChunks: true
 });
 
-let root = process.env.npm_lifecycle_event.indexOf(':root') != -1;
-
 var specific = {
     module: {
         loaders: [{
@@ -34,11 +32,7 @@ var specific = {
             to: '_redirects',
             toType: 'file'
         }]),
-    ],
-
-    output: {
-        publicPath: root ? '/' : '/starter/'
-    }
+    ]
 };
 
 module.exports = merge(common, specific);

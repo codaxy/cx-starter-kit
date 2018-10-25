@@ -15,7 +15,7 @@ export const KeyMetrics = <cx>
                 <Line anchors="0 1 0 0" offset="20 0 20 0" stroke="gray" />
 
                 <Chart margin="20 0 50 0" padding="0 250 0 0" axes={{
-                    x: { type: NumericAxis, min: 0, format: "p", snapToTicks: 0, anchors:"0 1 1 0.35", offset:"0 170 0 150" },
+                    x: { type: NumericAxis, min: 0, format: "p;0;2", snapToTicks: 0, anchors:"0 1 1 0.35", offset:"0 170 0 150" },
                     y: { type: CategoryAxis, inverted: true, vertical: true, hidden: true , anchors:"0 1 1 0.35", offset: "0 0 0 150"}
                 }}>
 
